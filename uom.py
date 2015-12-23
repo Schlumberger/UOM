@@ -1,4 +1,4 @@
-"""UOM conversion factor."""
+"""UOM conversion tool."""
 try:
     from StringIO import StringIO
 except ImportError:
@@ -12,7 +12,7 @@ from math import pi
 df = None
 
 
-def load():
+def load(verbose=False):
     """Load unit dictionary."""
     global df
 
@@ -20,7 +20,9 @@ def load():
     tsv2 = tsv2.replace("PI", str(pi))
 
     df = read_csv(StringIO(tsv2), sep='\t', index_col=0)
-    # print(df)
+
+    if verbose:
+        print(df)
 
 
 def base_conversion_factors(unit, verbose=True):
@@ -57,7 +59,7 @@ def base_unit(unit):
     return base_unit
 
 
-def conversion_factors(source, target, verbose=True):
+def conversion_factors(source, target, verbose=False):
     """Return conversion scale and offset."""
     if base_unit(source) != base_unit(target):
         if verbose:
@@ -108,5 +110,5 @@ def test():
                                                           o / i[3] * 100)))
 
         print('=' * 80)
-# print(pi, str(pi))
+
 # test()
