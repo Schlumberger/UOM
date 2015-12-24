@@ -193,38 +193,38 @@ pHz	Hz	0	1E-12	1
 THz	Hz	0	1E12	1
 uHz	Hz	0	1E-6	1
 rad	IS-BASE
-ccgr	rad	0	PI	2E6
-cgr	rad	0	PI	2E4
-dega	rad	0	PI	180
-gon	rad	0	PI	200
-mila	rad	0	PI	3.2E3
-mina	rad	0	PI	1.08E4
-rev	rad	0	2*PI	1
-seca	rad	0	PI	6.48E5
-0.001 seca	rad	0	PI	6.48E8
+ccgr	rad	0	3.141592653589793	2E6
+cgr	rad	0	3.141592653589793	2E4
+dega	rad	0	3.141592653589793	180
+gon	rad	0	3.141592653589793	200
+mila	rad	0	3.141592653589793	3.2E3
+mina	rad	0	3.141592653589793	1.08E4
+rev	rad	0	6.283185307179586	1
+seca	rad	0	3.141592653589793	6.48E5
+0.001 seca	rad	0	3.141592653589793	6.48E8
 krad	rad	0	1E3	1
 mrad	rad	0	1E-3	1
 Mrad	rad	0	1E6	1
 urad	rad	0	1E-6	1
 rad/m	IS-BASE
-0.01 dega/ft	rad/m	0	PI	5.4864E3
-1/30 dega/ft	rad/m	0	PI	1.64592E3
-1/30 dega/m	rad/m	0	PI	5400
-dega/ft	rad/m	0	PI	54.864
-dega/m	rad/m	0	PI	180
+0.01 dega/ft	rad/m	0	3.141592653589793	5.4864E3
+1/30 dega/ft	rad/m	0	3.141592653589793	1.64592E3
+1/30 dega/m	rad/m	0	3.141592653589793	5400
+dega/ft	rad/m	0	3.141592653589793	54.864
+dega/m	rad/m	0	3.141592653589793	180
 rad/ft	rad/m	0	1	0.3048
-rev/ft	rad/m	0	2*PI	0.3048
-rev/m	rad/m	0	2*PI	1
+rev/ft	rad/m	0	6.283185307179586	0.3048
+rev/m	rad/m	0	6.283185307179586	1
 rad/m3	IS-BASE
 rad/ft3	rad/m3	0	1	0.028316846592
-rpm	rad/s	0	2*PI	60
+rpm	rad/s	0	6.283185307179586	60
 rad/s	IS-BASE
-dega/h	rad/s	0	PI	6.48E5
-dega/min	rad/s	0	PI	1.08E4
-dega/s	rad/s	0	PI	180
-rev/s	rad/s	0	2*PI	1
+dega/h	rad/s	0	3.141592653589793	6.48E5
+dega/min	rad/s	0	3.141592653589793	1.08E4
+dega/s	rad/s	0	3.141592653589793	180
+rev/s	rad/s	0	6.283185307179586	1
 rad/s2	IS-BASE
-rpm/s	rad/s2	0	2*PI	60
+rpm/s	rad/s2	0	6.283185307179586	60
 deltaC	deltaK	0	1	1
 deltaF	deltaK	0	5	9
 deltaR	deltaK	0	5	9
@@ -266,7 +266,7 @@ nA	A	0	1E-9	1
 pA	A	0	1E-12	1
 TA	A	0	1E12	1
 uA	A	0	1E-6	1
-Oe	A/m	0	1000	4*PI
+Oe	A/m	0	1000	12.566370614359172
 A/mm	A/m	0	1E3	1
 A/m	IS-BASE
 A/cm2	A/m2	0	1E4	1
@@ -827,7 +827,7 @@ hL	m3	0	0.1	1
 mL	m3	0	1E-6	1
 m3/rad	IS-BASE
 ft3/rad	m3/rad	0	0.028316846592	1
-m3/rev	m3/rad	0	1	2*PI
+m3/rev	m3/rad	0	1	6.283185307179586
 m3/kg	IS-BASE
 0.01 L/kg	m3/kg	0	1E-5	1
 bbl/ton[UK]	m3/kg	0	0.158987294928	1016.0469088
@@ -1442,5 +1442,4 @@ B/m	IS-BASE
 B/O	IS-BASE
 V/B	IS-BASE
 V/dB	V/B	0	10	1
-dB	B	0	0.1	1
-  """
+dB	B	0	0.1	1"""

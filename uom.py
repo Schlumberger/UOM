@@ -7,51 +7,74 @@ except ImportError:
 from pandas import read_csv
 
 from uomdata import tsv
-from math import pi
 
-df = None
+df_uom = None
+
+unit_alias_dict = {
+    "deg": "dega",
+    "lbm/gal": "lbf/gal[US]",
+    "gal/min": "gal[US]/min",
+    "c/min": "rpm",
+    "kft.lbf": "1000 lbf.ft",
+    "deg/100ft": "0.01 dega/ft"
+}
 
 
 def load(verbose=False):
     """Load unit dictionary."""
-    global df
+    global df_uom
 
-    tsv2 = tsv.replace("4*PI", str(4 * pi)).replace("2*PI", str(2 * pi))
-    tsv2 = tsv2.replace("PI", str(pi))
-
-    df = read_csv(StringIO(tsv2), sep='\t', index_col=0)
+    df_uom = read_csv(StringIO(tsv), sep='\t', index_col=0)
 
     if verbose:
-        print(df)
+        print(df_uom)
 
 
-def base_conversion_factors(unit, verbose=True):
+def unit_alias(alias):
+    """For a given unit alias return the approprieated unit."""
+    if alias in unit_alias_dict:
+        return unit_alias_dict[alias]
+    else:
+        return alias
+
+
+def base_conversion_factors(unit_or_alias, verbose=True):
     """"Return conversion facors to the base unit."""
-    global df
+    global df_uom
 
-    if df is None:
+    if df_uom is None:
         load()
 
-    if verbose:
-        print(unit, df["A"][unit], df["B"][unit], df["C"][unit])
+    unit = unit_alias(unit_or_alias)
 
-    if df["baseUnit"][unit] == "IS-BASE":
+    if verbose:
+        print(unit, df_uom["A"][unit], df_uom["B"][unit], df_uom["C"][unit])
+
+    if df_uom["baseUnit"][unit] == "IS-BASE":
         if verbose:
             print("The unit {} it is a base unit.".format(unit))
 
         return 0, 1, 1
 
-    return df["A"][unit], df["B"][unit], df["C"][unit]
+    return df_uom["A"][unit], df_uom["B"][unit], df_uom["C"][unit]
 
 
-def base_unit(unit):
+def base_unit(unit_or_alias, verbose=False):
     """Return base unit."""
-    global df
+    global df_uom
 
-    if df is None:
+    unit = unit_alias(unit_or_alias)
+
+    if df_uom is None:
         load()
 
-    base_unit = df["baseUnit"][unit]
+    if unit not in df_uom.index:
+        return None
+
+    base_unit = df_uom["baseUnit"][unit]
+
+    if verbose:
+        print(base_unit, type(base_unit))
 
     if base_unit == "IS-BASE":
         return unit
@@ -98,7 +121,7 @@ def test():
     }
 
     for k in sorted(tests):
-        print("Test {}".format(k))
+        print("Test conversion {}".format(k))
         print('=' * 80)
         i = tests[k]
         o = convert_value(i[0], i[1], i[2])
@@ -106,8 +129,21 @@ def test():
         if o == i[3]:
             print("OK {}({} == {})".format(k, o, i[3]))
         else:
+            assert(False)
             print("Error {} ({} <> {}, diff {} %)".format(k, o, i[3], abs(100 -
                                                           o / i[3] * 100)))
+
+        print('=' * 80)
+
+    for k in sorted(unit_alias_dict):
+        print("Test unit alias {}".format(k))
+        print('=' * 80)
+
+        unit = unit_alias(k)
+        base = base_unit(unit)
+        print("Alias: {}, Unit: {}, Base unit: {}".format(k, unit, base))
+
+        assert(base is not None)
 
         print('=' * 80)
 
