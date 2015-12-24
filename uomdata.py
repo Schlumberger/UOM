@@ -1442,4 +1442,5 @@ B/m	IS-BASE
 B/O	IS-BASE
 V/B	IS-BASE
 V/dB	V/B	0	10	1
-dB	B	0	0.1	1"""
+dB	B	0	0.1	1
+unitless	IS-BASE"""
