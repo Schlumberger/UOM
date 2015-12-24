@@ -23,10 +23,11 @@ from uom import convert_value
 
 print(convert_value(value=10, source="m", target="ft"))
 ```
- - Return the base (SI) unit
+ - Return the base (SI) unit and if you are using unit alias you can find the Energistics UOM symbol
 
 ```
-from uom import base_unit
+from uom import base_unit, unit_alias
 
-print(base_value("ft/h"))
+print(base_value("kft.lbf"))
+print(unit_alias("kft.lbf"))
 ```
