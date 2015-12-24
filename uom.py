@@ -16,7 +16,10 @@ unit_alias_dict = {
     "gal/min": "gal[US]/min",
     "c/min": "rpm",
     "kft.lbf": "1000 lbf.ft",
-    "deg/100ft": "0.01 dega/ft"
+    "deg/100ft": "0.01 dega/ft",
+    "feet": "ft",
+    "FT": "ft",
+    "foot": "ft"
 }
 
 
