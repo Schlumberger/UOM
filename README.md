@@ -1,7 +1,7 @@
 # UOM
-Unit of Measurements conversation factors tool
+Unit of Measure conversion tool
 
-The tool conversion factors and unit spelling is based on the Energistics UOM 1.0:
+The conversion factors and unit symbols are based on the Energistics UOM 1.0:
 http://www.energistics.org/news/energistics-publishes-unit-of-measure-standard-v1-0
 extended with few extra unit aliases and "unitless" special unit that cannot be converted.
 
@@ -21,13 +21,15 @@ scale, offset = conversion_factors(source="m", target="ft")
 ```
 from uom import convert_value
 
-print(convert_value(value=10, source="m", target="ft"))
+print(convert(value=10, source="m", target="ft"))
 ```
  - Return the base (SI) unit and if you are using unit alias you can find the Energistics UOM symbol
 
 ```
 from uom import base_unit, unit_alias
 
-print(base_value("kft.lbf"))
+print(base_unit("kft.lbf"))
 print(unit_alias("kft.lbf"))
 ```
+
+If you have suggestions for improvement or you found bugs, please don't hesitate to put them in the issue list.

@@ -106,10 +106,23 @@ def conversion_factors(source, target, verbose=False):
     return scale, offset
 
 
-def convert_value(value, source, target):
-    """Convert value from source to target."""
+def convert(value, source=None, target=None, verbose=False):
+    """Convert value(s) from source to target."""
+    if target is None and source is not None:
+        target = base_unit(source)
+
+    if source is None and target is not None:
+        source = base_unit(target)
+
     scale, offset = conversion_factors(source, target)
+
+    if verbose:
+        print(value, type(value))
+
     target_value = scale * value + offset
+
+    if verbose:
+        print(target_value, type(target_value))
 
     return target_value
 
@@ -127,7 +140,7 @@ def test():
         print("Test conversion {}".format(k))
         print('=' * 80)
         i = tests[k]
-        o = convert_value(i[0], i[1], i[2])
+        o = convert(i[0], i[1], i[2])
 
         if o == i[3]:
             print("OK {}({} == {})".format(k, o, i[3]))
