@@ -6,7 +6,10 @@ except ImportError:
 
 from pandas import read_csv
 
-from uomdata import tsv
+try:
+    from uomdata import tsv
+except:
+    pass
 
 df_uom = None
 
@@ -41,7 +44,7 @@ def unit_alias(alias):
         return alias
 
 
-def base_conversion_factors(unit_or_alias, verbose=True):
+def base_conversion_factors(unit_or_alias, verbose=False):
     """"Return conversion facors to the base unit."""
     global df_uom
 
