@@ -1,4 +1,4 @@
-"""TSV."""
+"""UOM TSV."""
 
 tsv = """symbol	baseUnit	A	B	C
 %	Euc	0	0.01	1
