@@ -7,6 +7,7 @@ env:
     # CODACY_PROJECT_TOKEN=d502c517c760423990bf2f7711aff18d
     - COVERALLS_REPO_TOKEN=aWBnb7oePKUVnI0gTeTqYGvhgM0vsw3M4
 install:
+    - pip install -r requirements.txt
     - pip install coverage
     - pip install pytest pytest-cov
     #- pip install coveralls
