@@ -1,6 +1,12 @@
 """UOM TSV."""
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
-tsv = """symbol	baseUnit	A	B	C
+from pandas import read_csv
+
+data = """symbol	baseUnit	A	B	C
 %	Euc	0	0.01	1
 ppk	Euc	0	1E-3	1
 ppm	Euc	0	1E-6	1
@@ -1445,3 +1451,5 @@ V/dB	V/B	0	10	1
 dB	B	0	0.1	1
 unitless	IS-BASE
 utc_datetime	IS-BASE"""
+
+df_uom = read_csv(StringIO(data), sep='\t', index_col=0)

@@ -1,37 +1,13 @@
 """UOM conversion tool."""
 try:
-    from StringIO import StringIO
-except ImportError:
-    from io import StringIO
-
-from pandas import read_csv
-
-try:
-    from uomdata import tsv
+    from uomdata import df_uom
     from unit_alias import unit_alias
 except:
     pass
 
-df_uom = None
-
-
-def load(verbose=False):
-    """Load unit dictionary."""
-    global df_uom
-
-    df_uom = read_csv(StringIO(tsv), sep='\t', index_col=0)
-
-    if verbose:
-        print(df_uom)
-
 
 def base_conversion_factors(unit_or_alias, verbose=False):
     """"Return conversion facors to the base unit."""
-    global df_uom
-
-    if df_uom is None:
-        load()
-
     unit = unit_alias(unit_or_alias)
 
     if verbose:
@@ -48,12 +24,7 @@ def base_conversion_factors(unit_or_alias, verbose=False):
 
 def base_unit(unit_or_alias, verbose=False):
     """Return base unit."""
-    global df_uom
-
     unit = unit_alias(unit_or_alias)
-
-    if df_uom is None:
-        load()
 
     if unit not in df_uom.index:
         return None
