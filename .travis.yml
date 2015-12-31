@@ -1,0 +1,27 @@
+language: python
+python:
+    - 2.7
+    - 3.5
+env:
+    # one line env otherwise two different runs
+    # CODACY_PROJECT_TOKEN=d502c517c760423990bf2f7711aff18d
+    - COVERALLS_REPO_TOKEN=aWBnb7oePKUVnI0gTeTqYGvhgM0vsw3M4
+install:
+    - pip install -r requirements.txt
+    - pip install coverage
+    #- pip install coveralls
+    - pip install python-coveralls
+    #- pip install codacy-coverage
+script:
+    - coverage run --source=1_Download_LAS 1_Download_LAS/test.py
+after_success:
+    - coverage report -m
+    - coveralls
+    #- coverage xml
+    #- python-codacy-coverage -r coverage.xml
+notifications:
+  email:
+    recipients:
+      - vvesselinov@slb.com
+    on_success: change
+    on_failure: change
