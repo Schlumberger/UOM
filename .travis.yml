@@ -12,7 +12,7 @@ install:
     - pip install python-coveralls
     #- pip install codacy-coverage
 script:
-    - coverage run --source=1_Download_LAS 1_Download_LAS/test.py
+    - coverage run --source=test.py
 after_success:
     - coverage report -m
     - coveralls
