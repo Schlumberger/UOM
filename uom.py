@@ -2,7 +2,7 @@
 try:
     from uomdata import df_uom
     from unit_alias import unit_alias
-except:
+except ImportError:
     pass
 
 
