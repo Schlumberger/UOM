@@ -5,7 +5,7 @@ from unit_alias import unit_alias, unit_alias_dict
 from uom import base_unit, convert
 
 
-class UOM_test(TestCase):
+class UOMTestCase(TestCase):
     """Test class."""
 
     def test_conversion(self):
