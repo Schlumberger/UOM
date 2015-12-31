@@ -15,7 +15,7 @@ def base_conversion_factors(unit_or_alias, verbose=False):
 
     if df_uom["baseUnit"][unit] == "IS-BASE":
         if verbose:
-            print("The unit {} it is a base unit.".format(unit))
+            print("The unit {0} it is a base unit.".format(unit))
 
         return 0, 1, 1
 
@@ -44,8 +44,8 @@ def conversion_factors(source, target, verbose=False):
     """Return conversion scale and offset."""
     if base_unit(source) != base_unit(target):
         if verbose:
-            print("The units {} and {} are not compatible.".format(source,
-                                                                   target))
+            print("The units {0} and {1} are not compatible.".format(source,
+                                                                     target))
 
         return None, None
 
@@ -56,7 +56,7 @@ def conversion_factors(source, target, verbose=False):
     offset = source_A * target_C / source_C / target_B - target_A / target_B
 
     if verbose:
-        print("Scale: {}, offset: {}".format(scale, offset))
+        print("Scale: {0}, offset: {1}".format(scale, offset))
 
     return scale, offset
 
