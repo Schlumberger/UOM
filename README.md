@@ -1,4 +1,7 @@
 # UOM
+
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/ab7fbdf0551643a3b73dcf5fcd881572/badge.svg)](https://www.quantifiedcode.com/app/project/ab7fbdf0551643a3b73dcf5fcd881572)
+
 Unit of Measure conversion tool
 
 The conversion factors and unit symbols are based on the Energistics UOM 1.0:
