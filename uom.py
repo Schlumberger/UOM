@@ -1,9 +1,6 @@
 """UOM conversion tool."""
-try:
-    from uomdata import df_uom
-    from unit_alias import unit_alias
-except ImportError:
-    pass
+from unit_alias import unit_alias
+from uomdata import df_uom
 
 
 def base_conversion_factors(unit_or_alias, verbose=False):
