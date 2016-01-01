@@ -7,6 +7,12 @@ def base_conversion_factors(unit_or_alias, verbose=False):
     """"Return conversion facors to the base unit."""
     unit = unit_alias(unit_or_alias)
 
+    if unit not in df_uom.index:
+        if verbose:
+            print("Unit {} unknown.".format(unit_or_alias))
+
+        return None, None, None
+
     if verbose:
         print(unit, df_uom["A"][unit], df_uom["B"][unit], df_uom["C"][unit])
 
@@ -24,6 +30,9 @@ def base_unit(unit_or_alias, verbose=False):
     unit = unit_alias(unit_or_alias)
 
     if unit not in df_uom.index:
+        if verbose:
+            print("Unit {} unknown.".format(unit_or_alias))
+
         return None
 
     base_unit = df_uom["baseUnit"][unit]
@@ -39,15 +48,20 @@ def base_unit(unit_or_alias, verbose=False):
 
 def conversion_factors(source, target, verbose=False):
     """Return conversion scale and offset."""
-    if base_unit(source) != base_unit(target):
+    source_base_unit = base_unit(source, verbose)
+
+    if source_base_unit is None:
+        return None, None
+
+    if base_unit(source, verbose) != base_unit(target, verbose):
         if verbose:
             print("The units {0} and {1} are not compatible.".format(source,
                                                                      target))
 
         return None, None
 
-    source_A, source_B, source_C = base_conversion_factors(source)
-    target_A, target_B, target_C = base_conversion_factors(target)
+    source_A, source_B, source_C = base_conversion_factors(source, verbose)
+    target_A, target_B, target_C = base_conversion_factors(target, verbose)
 
     scale = source_B * target_C / source_C / target_B
     offset = source_A * target_C / source_C / target_B - target_A / target_B
@@ -60,13 +74,25 @@ def conversion_factors(source, target, verbose=False):
 
 def convert(value, source=None, target=None, verbose=False):
     """Convert value(s) from source to target."""
+    if source == target:
+        return value
+
     if target is None and source is not None:
-        target = base_unit(source)
+        target = base_unit(source, verbose)
+
+        if target is None:
+            return None
 
     if source is None and target is not None:
-        source = base_unit(target)
+        source = base_unit(target, verbose)
 
-    scale, offset = conversion_factors(source, target)
+        if source is None:
+            return None
+
+    scale, offset = conversion_factors(source, target, verbose)
+
+    if scale is None or offset is None:
+        return None
 
     if verbose:
         print(value, type(value))
