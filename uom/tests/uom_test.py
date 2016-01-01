@@ -1,18 +1,17 @@
 """Test functions."""
-# from os.path import dirname
-# from sys.path import insert; insert(0, dirname(dirname(__file__)))
 from unittest import TestCase, main
 
-from ..unit_alias import unit_alias_dict
-from ..uom import base_unit, convert, conversion_factors, unit_alias
-from ..uom import base_conversion_factors
 from ..command_line import main as main2
+from ..unit_alias import unit_alias_dict
+from ..uom import (base_conversion_factors, base_unit, conversion_factors,
+                   convert, unit_alias)
+from pandas import DataFrame
 
 
 class UOMTestCase(TestCase):
     """Test class."""
 
-    def test_conversion(self):
+    def test_conversion_of_value(self):
         """Test conversion function."""
         tests = {
             "ft/h => ft/s": [1, "ft/h", "ft/s", 0.0002777777777777778],
@@ -47,6 +46,34 @@ class UOMTestCase(TestCase):
         o = convert(i[0], None, i[2])
 
         self.assertEqual(o, i[3])
+
+        for k in sorted(tests):
+            i = tests[k]
+            o = main2(i[0], i[1], i[2])
+
+            self.assertEqual(o, i[3])
+
+    def test_conversion_of_list(self):
+        """Test conversion of list function."""
+        tests = {
+            "m => ft": [[10, 100], "m", "ft",
+                        [32.80839895013123, 328.0839895013123]],
+        }
+
+        for k in sorted(tests):
+            i = tests[k]
+            o = main2(i[0], i[1], i[2])
+
+            self.assertTrue(o == i[3])
+
+    def test_conversion_of_dataframe(self):
+        """Test conversion of list function."""
+        df = DataFrame({"m": [10, 100], "ft":
+                       [32.80839895013123, 328.0839895013123]})
+
+        o = convert(df['m'], 'm', 'ft')
+
+        self.assertTrue(df['ft'].equals(o))
 
     def test_bad_base_unit(self):
         """Test base_unit function with bad parameter."""
@@ -114,21 +141,6 @@ class UOMTestCase(TestCase):
 
         unit = unit_alias('jhdfkjshdfkjs')
         self.assertEqual(unit, 'jhdfkjshdfkjs')
-
-    def test_cmd(self):
-        """Test command_line.main function."""
-        tests = {
-            "ft/h => ft/s": [1, "ft/h", "ft/s", 0.0002777777777777778],
-            "m => ft": [10, "m", "ft", 32.80839895013123],
-            "ft => m": [30, "ft", "m", 9.144],
-            "degC => degF": [22.4, "degC", "degF", 72.32]
-        }
-
-        for k in sorted(tests):
-            i = tests[k]
-            o = main2(i[0], i[1], i[2])
-
-            self.assertEqual(o, i[3])
 
 
 if __name__ == '__main__':

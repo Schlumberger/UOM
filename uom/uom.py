@@ -97,7 +97,10 @@ def convert(value, source=None, target=None, verbose=False):
     if verbose:
         print(value, type(value))
 
-    target_value = scale * value + offset
+    if type(value) == list:
+        target_value = [scale * i + offset for i in value]
+    else:
+        target_value = scale * value + offset
 
     if verbose:
         print(target_value, type(target_value))
