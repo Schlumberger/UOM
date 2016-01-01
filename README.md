@@ -2,6 +2,7 @@
 
 [![Code Issues](https://www.quantifiedcode.com/api/v1/project/ab7fbdf0551643a3b73dcf5fcd881572/badge.svg)](https://www.quantifiedcode.com/app/project/ab7fbdf0551643a3b73dcf5fcd881572)
 [![Build Status](https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master)](https://travis-ci.com/Schlumberger/UOM)
+[![Coverage Status](https://coveralls.io/repos/Schlumberger/UOM/badge.svg?branch=master&service=github&t=ETSOWO)](https://coveralls.io/github/Schlumberger/UOM?branch=master)
 
 Unit of Measure conversion tool
 
