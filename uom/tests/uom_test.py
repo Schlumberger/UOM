@@ -53,6 +53,19 @@ class UOMTestCase(TestCase):
 
             self.assertEqual(o, i[3])
 
+    def test_conversion_unitless(self):
+        """Test conversion of unitless function."""
+        tests = {
+            "u1": [10, '', 'unitless', 10],
+            "u2": [10, 'unitless', '', 10]
+        }
+
+        for k in sorted(tests):
+            i = tests[k]
+            o = main2(i[0], i[1], i[2])
+
+            self.assertTrue(o == i[3])
+
     def test_conversion_of_list(self):
         """Test conversion of list function."""
         tests = {

@@ -74,7 +74,8 @@ def conversion_factors(source, target, verbose=False):
 
 def convert(value, source=None, target=None, verbose=False):
     """Convert value(s) from source to target."""
-    if source == target:
+    if source == target or \
+            ('unitless' in [source, target] and '' in [source, target]):
         return value
 
     if target is None and source is not None:
