@@ -1,8 +1,10 @@
 """Test functions."""
+# from os.path import dirname
+# from sys.path import insert; insert(0, dirname(dirname(__file__)))
 from unittest import TestCase, main
 
-from unit_alias import unit_alias, unit_alias_dict
-from uom import base_unit, convert
+from ..unit_alias import unit_alias, unit_alias_dict
+from ..uom import base_unit, convert
 
 
 class UOMTestCase(TestCase):
