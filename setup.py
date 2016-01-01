@@ -36,7 +36,7 @@ setup(name='uom',
       license='BSD',
       packages=['uom'],
       install_requires=requirements(),
-      test_suite='tests',
+      test_suite='uom.tests',
       entry_points={
           'console_scripts': ['convert=uom.command_line:main'],
       },
