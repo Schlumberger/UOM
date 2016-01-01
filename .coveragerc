@@ -1,0 +1,5 @@
+[run]
+source = uom
+
+[report]
+omit = uom/tests/*
