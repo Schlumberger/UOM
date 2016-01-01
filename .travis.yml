@@ -14,7 +14,7 @@ install:
     - pip install python-coveralls
     #- pip install codacy-coverage
 script:
-    - coverage run test.py
+    - coverage run --source=uom test/test.py
 after_success:
     - coverage report -m
     - coveralls
