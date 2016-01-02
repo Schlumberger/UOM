@@ -5,8 +5,7 @@
 [![Build Status](https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master)](https://travis-ci.com/Schlumberger/UOM)
 [![Coverage Status](https://coveralls.io/repos/Schlumberger/UOM/badge.svg?branch=master&service=github&t=ETSOWO)](https://coveralls.io/github/Schlumberger/UOM?branch=master)
 
-Unit of Measure conversion tool
-=============
+# Unit of Measure conversion tool
 
 The conversion factors and unit symbols are based on the Energistics UOM 1.0:
 http://www.energistics.org/news/energistics-publishes-unit-of-measure-standard-v1-0
@@ -15,29 +14,29 @@ extended with few extra unit aliases and "unitless" special unit that cannot be 
 The units are cases sensitives.
 
 
-Install
----------
+## Install
+
 ```pip install uom```
+
+## Examples
 
 Please find few example of possible utilization:
 
-Find conversion factors to be applied to convert from one unit to another
----------
+### Find conversion factors to be applied to convert from one unit to another
+
 ```
 from uom import conversion_factors
 
 scale, offset = conversion_factors(source="m", target="ft")
 ```
-Convert a value from one unit to another
-----------
+### Convert a value from one unit to another
 
 ```
 from uom import convert_value
 
 print(convert(value=10, source="m", target="ft"))
 ```
-Return the base (SI) unit and if you are using unit alias you can find the equivalent Energistics UOM symbol
-----------
+### Return the base (SI) unit and if you are using unit alias you can find the equivalent Energistics UOM symbol
 
 ```
 from uom import base_unit, unit_alias
