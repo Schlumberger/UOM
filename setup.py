@@ -18,7 +18,7 @@ setup(name='uom',
       description='Unit of Measure conversion tool',
       long_description=readme(),
       classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Intended Audience :: Customer Service',
         'Intended Audience :: Developers',
