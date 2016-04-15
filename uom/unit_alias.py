@@ -27,7 +27,9 @@ UNIT_ALIAS_DICT = {
     'KFLB': 'klbf',
     'G': 'gn',
     "G's": 'gn',
-    'hr': 'h'
+    'hr': 'h',
+    'ft.lbf': 'lbf.ft',
+    'in.lbf': 'lbf.in'
 }
 
 
