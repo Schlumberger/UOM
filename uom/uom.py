@@ -1,49 +1,49 @@
 """UOM conversion tool."""
 from .unit_alias import unit_alias
-from .uomdata import df_uom
+from .uomdata import DF_UOM
 
 
 def base_conversion_factors(unit_or_alias, verbose=False):
     """"Return conversion facors to the base unit."""
     unit = unit_alias(unit_or_alias)
 
-    if unit not in df_uom.index:
+    if unit not in DF_UOM.index:
         if verbose:
             print("Unit {} unknown.".format(unit_or_alias))
 
         return None, None, None
 
     if verbose:
-        print(unit, df_uom["A"][unit], df_uom["B"][unit], df_uom["C"][unit])
+        print(unit, DF_UOM["A"][unit], DF_UOM["B"][unit], DF_UOM["C"][unit])
 
-    if df_uom["baseUnit"][unit] == "IS-BASE":
+    if DF_UOM["baseUnit"][unit] == "IS-BASE":
         if verbose:
             print("The unit {0} it is a base unit.".format(unit))
 
         return 0, 1, 1
 
-    return df_uom["A"][unit], df_uom["B"][unit], df_uom["C"][unit]
+    return DF_UOM["A"][unit], DF_UOM["B"][unit], DF_UOM["C"][unit]
 
 
 def base_unit(unit_or_alias, verbose=False):
     """Return base unit."""
     unit = unit_alias(unit_or_alias)
 
-    if unit not in df_uom.index:
+    if unit not in DF_UOM.index:
         if verbose:
             print("Unit {} unknown.".format(unit_or_alias))
 
         return None
 
-    base_unit = df_uom["baseUnit"][unit]
+    b_unit = DF_UOM["baseUnit"][unit]
 
     if verbose:
-        print(base_unit, type(base_unit))
+        print(b_unit, type(b_unit))
 
-    if base_unit == "IS-BASE":
+    if b_unit == "IS-BASE":
         return unit
 
-    return base_unit
+    return b_unit
 
 
 def conversion_factors(source, target, verbose=False):
@@ -60,11 +60,11 @@ def conversion_factors(source, target, verbose=False):
 
         return None, None
 
-    source_A, source_B, source_C = base_conversion_factors(source, verbose)
-    target_A, target_B, target_C = base_conversion_factors(target, verbose)
+    source_a, source_b, source_c = base_conversion_factors(source, verbose)
+    target_a, target_b, target_c = base_conversion_factors(target, verbose)
 
-    scale = source_B * target_C / source_C / target_B
-    offset = source_A * target_C / source_C / target_B - target_A / target_B
+    scale = source_b * target_c / source_c / target_b
+    offset = source_a * target_c / source_c / target_b - target_a / target_b
 
     if verbose:
         print("Scale: {0}, offset: {1}".format(scale, offset))
@@ -98,7 +98,7 @@ def convert(value, source=None, target=None, verbose=False):
     if verbose:
         print(value, type(value))
 
-    if type(value) == list:
+    if isinstance(value, list):
         target_value = [scale * i + offset for i in value]
     else:
         target_value = scale * value + offset
