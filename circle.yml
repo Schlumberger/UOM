@@ -1,0 +1,24 @@
+machine:
+  environment:
+    COVERALLS_REPO_TOKEN: aWBnb7oePKUVnI0gTeTqYGvhgM0vsw3M4
+  python:
+    version:
+      - 3.5.1
+      - 2.7.11
+
+dependencies:
+  pre:
+    - pip install -r requirements.txt
+    - pip install coverage
+    - pip install pytest pytest-cov
+    #- pip install coveralls
+    - pip install python-coveralls
+    #- pip install codacy-coverage
+test:
+  override:
+    - coverage run --source=uom setup.py test
+  post:
+    - coverage report -m
+    - coveralls
+    #- coverage xml
+    #- python-codacy-coverage -r coverage.xml
