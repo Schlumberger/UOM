@@ -1,11 +1,12 @@
 """Test functions."""
 from unittest import TestCase, main
 
+from pandas import DataFrame
+
 from ..command_line import main as main2
-from ..unit_alias import unit_alias_dict
+from ..unit_alias import UNIT_ALIAS_DICT
 from ..uom import (base_conversion_factors, base_unit, conversion_factors,
                    convert, unit_alias)
-from pandas import DataFrame
 
 
 class UOMTestCase(TestCase):
@@ -22,36 +23,36 @@ class UOMTestCase(TestCase):
 
         for k in sorted(tests):
             i = tests[k]
-            o = convert(i[0], i[1], i[2])
+            out = convert(i[0], i[1], i[2])
 
-            self.assertEqual(o, i[3])
+            self.assertEqual(out, i[3])
 
         # verbose tests
         for k in sorted(tests):
             i = tests[k]
-            o = convert(i[0], i[1], i[2], True)
+            out = convert(i[0], i[1], i[2], True)
 
-            self.assertEqual(o, i[3])
+            self.assertEqual(out, i[3])
 
         # target unit missing test
         k = "ft => m"
         i = tests[k]
-        o = convert(i[0], i[1], None)
+        out = convert(i[0], i[1], None)
 
-        self.assertEqual(o, i[3])
+        self.assertEqual(out, i[3])
 
         # source unit missing test
         k = "m => ft"
         i = tests[k]
-        o = convert(i[0], None, i[2])
+        out = convert(i[0], None, i[2])
 
-        self.assertEqual(o, i[3])
+        self.assertEqual(out, i[3])
 
         for k in sorted(tests):
             i = tests[k]
-            o = main2(i[0], i[1], i[2])
+            out = main2(i[0], i[1], i[2])
 
-            self.assertEqual(o, i[3])
+            self.assertEqual(out, i[3])
 
     def test_conversion_unitless(self):
         """Test conversion of unitless function."""
@@ -62,9 +63,9 @@ class UOMTestCase(TestCase):
 
         for k in sorted(tests):
             i = tests[k]
-            o = main2(i[0], i[1], i[2])
+            out = main2(i[0], i[1], i[2])
 
-            self.assertTrue(o == i[3])
+            self.assertTrue(out == i[3])
 
     def test_conversion_of_list(self):
         """Test conversion of list function."""
@@ -75,18 +76,18 @@ class UOMTestCase(TestCase):
 
         for k in sorted(tests):
             i = tests[k]
-            o = main2(i[0], i[1], i[2])
+            out = main2(i[0], i[1], i[2])
 
-            self.assertTrue(o == i[3])
+            self.assertTrue(out == i[3])
 
     def test_conversion_of_dataframe(self):
         """Test conversion of list function."""
-        df = DataFrame({"m": [10, 100], "ft":
-                       [32.80839895013123, 328.0839895013123]})
+        dtf = DataFrame({"m": [10, 100], "ft":
+                         [32.80839895013123, 328.0839895013123]})
 
-        o = convert(df['m'], 'm', 'ft')
+        out = convert(dtf['m'], 'm', 'ft')
 
-        self.assertTrue(df['ft'].equals(o))
+        self.assertTrue(dtf['ft'].equals(out))
 
     def test_bad_base_unit(self):
         """Test base_unit function with bad parameter."""
@@ -104,7 +105,7 @@ class UOMTestCase(TestCase):
         result = convert(10, "", 'jhdfkjshdfkjs')
         self.assertIsNone(result)
 
-        result = convert("A", "", 'jhdfkjshdfkjs')
+        result = convert("aaa", "", 'jhdfkjshdfkjs')
         self.assertIsNone(result)
 
         result = convert(10, None, 'jhdfkjshdfkjs')
@@ -138,16 +139,16 @@ class UOMTestCase(TestCase):
         self.assertIsNone(scale)
         self.assertIsNone(offset)
 
-    def test_bad_base_conversion_factors(self):
+    def test_bad_base_conv_factors(self):
         """Test base_conversion_factors function with bad parameter."""
-        a, b, c = base_conversion_factors("jhdfkjshdfkjs", True)
-        self.assertIsNone(a)
-        self.assertIsNone(b)
-        self.assertIsNone(c)
+        aaa, bbb, ccc = base_conversion_factors("jhdfkjshdfkjs", True)
+        self.assertIsNone(aaa)
+        self.assertIsNone(bbb)
+        self.assertIsNone(ccc)
 
     def test_unit_alias(self):
         """Test unit_alias function."""
-        for k in sorted(unit_alias_dict):
+        for k in sorted(UNIT_ALIAS_DICT):
             unit = unit_alias(k)
             base = base_unit(unit)
             self.assertIsNotNone(base)
