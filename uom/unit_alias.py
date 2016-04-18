@@ -3,7 +3,7 @@
 # Alias: UOM
 UNIT_ALIAS_DICT = {
     'deg': 'dega',
-    'lbm/gal': 'lbf/gal[US]',
+    'lbm/gal': 'lbm/gal[US]',
     'gal/min': 'gal[US]/min',
     'c/min': 'rpm',
     'kft.lbf': '1000 lbf.ft',
