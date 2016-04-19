@@ -2,3 +2,5 @@
 *.pyc
 
 .coverage
+
+uom/uom.xlsx

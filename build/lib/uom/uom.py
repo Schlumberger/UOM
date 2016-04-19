@@ -41,7 +41,18 @@ def base_unit(unit_or_alias, verbose=False):
         print(b_unit, type(b_unit))
 
     if b_unit == "IS-BASE":
+        underlying_unit = DF_UOM["underlyingDef"][unit]
+
+        if verbose:
+            print("underlying_unit: {}".format(underlying_unit))
+
+        if underlying_unit not in DF_UOM.index:
+            return unit
+
+        unit = base_unit(underlying_unit, verbose)
+
         return unit
+
 
     return b_unit
 

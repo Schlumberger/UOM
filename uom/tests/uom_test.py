@@ -139,6 +139,19 @@ class UOMTestCase(TestCase):
         self.assertIsNone(scale)
         self.assertIsNone(offset)
 
+    def test_base_unit_recursive(self):
+        """Test base_unit recursive."""
+        base = base_unit("J.m/m2", True)
+        self.assertEqual(base, 'N')
+
+        scale, offset = conversion_factors("Hz", "1/s", True)
+        self.assertEqual(scale, 1)
+        self.assertEqual(offset, 0)
+
+        scale, offset = conversion_factors("m3/m3", "%", True)
+        self.assertEqual(scale, 100)
+        self.assertEqual(offset, 0)
+
     def test_bad_base_conv_factors(self):
         """Test base_conversion_factors function with bad parameter."""
         aaa, bbb, ccc = base_conversion_factors("jhdfkjshdfkjs", True)
