@@ -11,6 +11,7 @@ UNIT_ALIAS_DICT = {
     'feet': 'ft',
     'FT': 'ft',
     'foot': 'ft',
+    'FT/S': 'ft/s',
     'ft/ht': 'ft/h',
     '1/30 deg/m': '1/30 dega/m',
     'deg/30m': '1/30 dega/m',

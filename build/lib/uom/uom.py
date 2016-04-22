@@ -38,7 +38,7 @@ def base_unit(unit_or_alias, verbose=False):
     b_unit = DF_UOM["baseUnit"][unit]
 
     if verbose:
-        print(b_unit, type(b_unit))
+        print(unit_or_alias, '=>', b_unit, type(b_unit))
 
     if b_unit == "IS-BASE":
         underlying_unit = DF_UOM["underlyingDef"][unit]
@@ -47,13 +47,19 @@ def base_unit(unit_or_alias, verbose=False):
             print("underlying_unit: {}".format(underlying_unit))
 
         if underlying_unit not in DF_UOM.index:
+            print(unit_or_alias, '=(Case#1)>', unit)
             return unit
 
-        unit = base_unit(underlying_unit, verbose)
+        if verbose:
+            print('\t', b_unit, type(b_unit))
 
-        return unit
+        b_unit = DF_UOM["baseUnit"][underlying_unit]
 
+        if b_unit not in DF_UOM.index:
+            print(unit_or_alias, '=(Case#2)>', underlying_unit)
+            return underlying_unit
 
+    print(unit_or_alias, '=(Case#3)>', b_unit)
     return b_unit
 
 
