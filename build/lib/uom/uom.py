@@ -92,10 +92,11 @@ def conversion_factors(source, target, verbose=False):
         if verbose:
             print("The units {0} and {1} are not compatible.".format(source,
                                                                      target))
+        source_dim = DF_UOM['dimension'][unit_alias(source)]
 
-        if DF_UOM['dimension'][unit_alias(source)] == \
-           DF_UOM['dimension'][unit_alias(target)]:
-            print("======>>> ERROR: Houston, we have a problem.")
+        if source_dim == DF_UOM['dimension'][unit_alias(target)] and \
+           source_dim != 'none':
+            raise Exception('ERROR: Houston, we have a problem')
 
         return None, None
 
