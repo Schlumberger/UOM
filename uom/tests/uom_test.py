@@ -70,6 +70,11 @@ class UOMTestCase(TestCase):
 
         self.assertIsNone(out)
 
+        # convert none dimension unit return None
+        out = convert(1, 'B', 'gAPI')
+
+        self.assertIsNone(out)
+
         for k in sorted(tests):
             i = tests[k]
             arg = "{} -s={} -t={}".format(i[0], i[1], i[2])

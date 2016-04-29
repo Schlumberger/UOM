@@ -3,4 +3,6 @@
 
 .coverage
 
+build/*
+
 uom/uom.xlsx

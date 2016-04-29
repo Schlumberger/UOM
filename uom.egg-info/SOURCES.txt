@@ -6,8 +6,8 @@ setup.py
 uom/__init__.py
 uom/cmd_line.py
 uom/unit_alias.py
+uom/uom.csv
 uom/uom.py
-uom/uom.tsv
 uom/uomdata.py
 uom.egg-info/PKG-INFO
 uom.egg-info/SOURCES.txt
