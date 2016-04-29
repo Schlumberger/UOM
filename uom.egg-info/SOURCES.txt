@@ -4,7 +4,7 @@ requirements.txt
 setup.cfg
 setup.py
 uom/__init__.py
-uom/command_line.py
+uom/cmd_line.py
 uom/unit_alias.py
 uom/uom.py
 uom/uom.tsv

@@ -36,31 +36,48 @@ def base_unit(unit_or_alias, verbose=False):
         return None
 
     b_unit = DF_UOM["baseUnit"][unit]
+    uderlying_def = DF_UOM["underlyingDef"][unit]
 
     if verbose:
-        print(unit_or_alias, '=>', b_unit, type(b_unit))
+        print("Input: {}, unit: {}, base_unit: {}, underlying_unit: {}"
+              .format(unit_or_alias, unit, b_unit, uderlying_def))
 
     if b_unit == "IS-BASE":
-        underlying_unit = DF_UOM["underlyingDef"][unit]
+        if uderlying_def:
+            if uderlying_def not in DF_UOM.index:
+                if verbose:
+                    print('{} => {} [Case1: IsBase, UD = {}, but not'
+                          ' available]>'.format(unit_or_alias, unit,
+                                                uderlying_def))
 
-        if verbose:
-            print("underlying_unit: {}".format(underlying_unit))
+                return unit
+            else:
+                if verbose:
+                    print('{} => {} [Case2: IsBase, UD = {} and available]'
+                          .format(unit_or_alias, unit, uderlying_def))
 
-        if underlying_unit not in DF_UOM.index:
-            print(unit_or_alias, '=(Case#1)>', unit)
+                unit2 = DF_UOM["baseUnit"][uderlying_def]
+
+                if unit2 not in DF_UOM.index:
+                    if verbose:
+                        print("Base unit {} not in the index".format(unit2))
+
+                    return uderlying_def
+                else:
+                    if verbose:
+                        print("Base unit {} in the index".format(b_unit))
+        else:
+            if verbose:
+                print('{} => {} [Case3: IsBase, UD is missing]'
+                      .format(unit_or_alias, unit))
+
             return unit
-
+    else:
         if verbose:
-            print('\t', b_unit, type(b_unit))
+            print('{} => {} [Case4: IsNotBase available]'.format(unit_or_alias,
+                                                                 b_unit))
 
-        b_unit = DF_UOM["baseUnit"][underlying_unit]
-
-        if b_unit not in DF_UOM.index:
-            print(unit_or_alias, '=(Case#2)>', underlying_unit)
-            return underlying_unit
-
-    print(unit_or_alias, '=(Case#3)>', b_unit)
-    return b_unit
+        return base_unit(b_unit, verbose)
 
 
 def conversion_factors(source, target, verbose=False):
@@ -74,6 +91,9 @@ def conversion_factors(source, target, verbose=False):
         if verbose:
             print("The units {0} and {1} are not compatible.".format(source,
                                                                      target))
+
+        if DF_UOM['dimension'][source] == DF_UOM['dimension'][target]:
+            print("======>>> ERROR: Houston, we have a problem.")
 
         return None, None
 

@@ -1,3 +1,4 @@
 [console_scripts]
-convert = uom.command_line:main
+uom_base_unit = uom.cmd_line:cmd_base_unit
+uom_convert_value = uom.cmd_line:cmd_convert
 

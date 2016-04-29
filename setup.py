@@ -36,7 +36,8 @@ setup(name='uom',
       install_requires=requirements(),
       test_suite='uom.tests',
       entry_points={
-          'console_scripts': ['convert=uom.command_line:main'],
+          'console_scripts': ['uom_convert_value=uom.cmd_line:cmd_convert',
+                              'uom_base_unit=uom.cmd_line:cmd_base_unit'],
       },
       include_package_data=True,
       zip_safe=False)
