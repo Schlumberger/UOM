@@ -6,3 +6,5 @@
 build/*
 
 uom/uom.xlsx
+
+build/lib/uom/uomdata.py
