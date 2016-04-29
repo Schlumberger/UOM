@@ -29,6 +29,9 @@ class UOMTestCase(TestCase):
             "Hz => 1/s": [1, "Hz", "1/s", 1],
             "1/s => Hz": [1, "1/s", "Hz", 1],
             "ft => m": [30, "ft", "m", 9.144],
+            "N.m => J": [1, "N.m", "J", 1],
+            "W => J/s": [1, "W", "J/s", 1],
+            "kft.lbf => J": [1, "kft.lbf", "J", 1355.8179483314004],
             "degC => degF": [22.4, "degC", "degF", 72.32]
         }
 
