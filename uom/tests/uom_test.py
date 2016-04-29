@@ -3,7 +3,7 @@ from unittest import TestCase, main
 
 from pandas import DataFrame
 
-from ..cmd_line import cmd_convert
+from ..cmd_line import cmd_convert, cmd_base_unit
 from ..unit_alias import UNIT_ALIAS_DICT
 from ..uom import (base_conversion_factors, base_unit, conversion_factors,
                    convert, unit_alias)
@@ -57,11 +57,27 @@ class UOMTestCase(TestCase):
         i = tests[k]
         out = convert(i[0], None, i[2])
 
-        self.assertEqual(out, i[3])
+        # convert uncompatible unit return None
+        out = convert(1, 'm', 'kg')
+
+        self.assertIsNone(out)
+
+        # convert uncompatible unit_aliases return None
+        out = convert(1, 'gal/min', 'kft.lbf')
+
+        self.assertIsNone(out)
 
         for k in sorted(tests):
             i = tests[k]
             arg = "{} -s={} -t={}".format(i[0], i[1], i[2])
+            print('\n===== arg:', arg)
+            out = cmd_convert(arg)
+
+            self.assertEqual(out, i[3])
+
+        for k in sorted(tests):
+            i = tests[k]
+            arg = "{} -s={} -t={} -v".format(i[0], i[1], i[2])
             print('\n===== arg:', arg)
             out = cmd_convert(arg)
 
@@ -115,6 +131,16 @@ class UOMTestCase(TestCase):
 
         base = base_unit("jhdfkjshdfkjs", True)
         self.assertIsNone(base)
+
+    def test_cmd_base_unit(self):
+        """Test base_unit function with bad parameter."""
+        base = cmd_base_unit("jhdfkjshdfkjs")
+        self.assertIsNone(base)
+
+        base = cmd_base_unit("jhdfkjshdfkjs -v")
+        self.assertIsNone(base)
+        base = cmd_base_unit("psi")
+        self.assertEqual(base, 'J/m3')
 
     def test_bad_convert(self):
         """Test convert function with bad parameter."""

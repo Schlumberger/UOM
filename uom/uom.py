@@ -83,16 +83,18 @@ def base_unit(unit_or_alias, verbose=False):
 def conversion_factors(source, target, verbose=False):
     """Return conversion scale and offset."""
     source_base_unit = base_unit(source, verbose)
+    target_base_unit = base_unit(target, verbose)
 
-    if source_base_unit is None:
+    if source_base_unit is None or target_base_unit is None:
         return None, None
 
-    if base_unit(source, verbose) != base_unit(target, verbose):
+    if source_base_unit != target_base_unit:
         if verbose:
             print("The units {0} and {1} are not compatible.".format(source,
                                                                      target))
 
-        if DF_UOM['dimension'][source] == DF_UOM['dimension'][target]:
+        if DF_UOM['dimension'][unit_alias(source)] == \
+           DF_UOM['dimension'][unit_alias(target)]:
             print("======>>> ERROR: Houston, we have a problem.")
 
         return None, None
