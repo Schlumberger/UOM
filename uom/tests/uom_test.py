@@ -91,8 +91,8 @@ class UOMTestCase(TestCase):
 
             self.assertEqual(out, i[3])
 
-        cmd_convert()
-        cmd_base_unit()
+        # cmd_convert()
+        # cmd_base_unit()
 
     def test_conversion_unitless(self):
         """Test conversion of unitless function."""
