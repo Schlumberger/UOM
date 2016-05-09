@@ -2,17 +2,23 @@
 
 # Alias: UOM
 UNIT_ALIAS_DICT = {
+    'W/A': 'V',
     'deg': 'dega',
+    'degr': 'dega',
     'lbm/gal': 'lbm/gal[US]',
     'gal/min': 'gal[US]/min',
+    'c/s': 'rev/s',
+    'cps': 'rev/s',
     'c/min': 'rpm',
     'kft.lbf': '1000 lbf.ft',
     'deg/100ft': '0.01 dega/ft',
+    '0.01 deg/ft': '0.01 dega/ft',
     'feet': 'ft',
     'FT': 'ft',
     'foot': 'ft',
     'FT/S': 'ft/s',
     'ft/ht': 'ft/h',
+    'ft/hr': 'ft/h',
     '1/30 deg/m': '1/30 dega/m',
     'deg/30m': '1/30 dega/m',
     'deg/m': 'dega/m',
@@ -29,6 +35,10 @@ UNIT_ALIAS_DICT = {
     'G': 'gn',
     "G's": 'gn',
     'hr': 'h',
+    'hour': 'h',
+    'hrs': 'h',
+    'PSI': 'psi',
+    'KPSI': 'kpsi',
     'ft.lbf': 'lbf.ft',
     'in.lbf': 'lbf.in'
 }
