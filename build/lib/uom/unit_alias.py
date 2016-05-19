@@ -19,11 +19,13 @@ UNIT_ALIAS_DICT = {
     'FT/S': 'ft/s',
     'ft/ht': 'ft/h',
     'ft/hr': 'ft/h',
+    'm/hr': 'm/h',
     '1/30 deg/m': '1/30 dega/m',
     'deg/30m': '1/30 dega/m',
     'deg/m': 'dega/m',
     '1000 ft.lbf': '1000 lbf.ft',
     '1000 lbf': 'klbf',
+    '1000 lbm': 'klbm',
     'kkgf': 'Mgf',
     'ppg': 'lbm/gal[US]',
     '1000 kgf': 'Mgf',
@@ -40,7 +42,11 @@ UNIT_ALIAS_DICT = {
     'PSI': 'psi',
     'KPSI': 'kpsi',
     'ft.lbf': 'lbf.ft',
-    'in.lbf': 'lbf.in'
+    'in.lbf': 'lbf.in',
+    'pa': 'Pa',
+    'IN': 'in',
+    'kpa': 'kPa',
+    '0.01 m3/m3': '0.01 bbl/bbl'
 }
 
 
