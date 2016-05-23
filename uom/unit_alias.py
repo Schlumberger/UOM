@@ -18,6 +18,8 @@ UNIT_ALIAS_DICT = {
     'foot': 'ft',
     'FT/S': 'ft/s',
     'ft/ht': 'ft/h',
+    'F/HR': 'ft/h',
+    'FT/H': 'ft/h',
     'ft/hr': 'ft/h',
     'm/hr': 'm/h',
     '1/30 deg/m': '1/30 dega/m',
@@ -31,6 +33,7 @@ UNIT_ALIAS_DICT = {
     '1000 kgf': 'Mgf',
     'KKGF': 'Mgf',
     'deg C': 'degC',
+    'DEGF': 'degF',
     'RPM': 'rpm',
     'KLBF': 'klbf',
     'KFLB': 'klbf',
@@ -38,6 +41,7 @@ UNIT_ALIAS_DICT = {
     "G's": 'gn',
     'hr': 'h',
     'hour': 'h',
+    'HR': 'h',
     'hrs': 'h',
     'PSI': 'psi',
     'KPSI': 'kpsi',
@@ -46,6 +50,10 @@ UNIT_ALIAS_DICT = {
     'pa': 'Pa',
     'IN': 'in',
     'kpa': 'kPa',
+    'GAPI': 'gAPI',
+    'OHMM': 'ohm.m',
+    'HZ': 'Hz',
+    'IN2': 'in2',
     '0.01 m3/m3': '0.01 bbl/bbl'
 }
 
