@@ -154,6 +154,11 @@ UNIT_ALIAS_DICT = {
     'PCNT': '%',
     'PERCENTAGE': '%',
     'IN2': 'in2',
+    'LB': 'lbf',
+    'LBF': 'lbf',
+    'LBS': 'lbf',
+    'lbs': 'lbf',
+    'kg/(m.s2)': 'Pa',
     '0.01 m3/m3': '0.01 bbl/bbl'
 }
 
