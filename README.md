@@ -16,8 +16,8 @@ The units are cases sensitives.
 
 ## Install
 ```
-gsutil cp gs://slb_dl/whl/uom-0.3-py2.py3-none-any.whl .
-pip install uom-0.3-py2.py3-none-any.whl
+gsutil cp gs://slb_dl/whl/uom-0.3.3-py2.py3-none-any.whl .
+pip install uom-0.3.3-py2.py3-none-any.whl
 ```
 
 ## Examples

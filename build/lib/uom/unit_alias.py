@@ -74,6 +74,7 @@ UNIT_ALIAS_DICT = {
     'kkgf': 'Mgf',
     'ppg': 'lbm/gal[US]',
     'LB/G': 'lbm/gal[US]',
+    'lb/gal': 'lbm/gal[US]',
     'LBM/GAL': 'lbm/gal[US]',
     'PPA': 'lbm/gal[US]',
     'PPG': 'lbm/gal[US]',

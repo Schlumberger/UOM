@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: uom
-Version: 0.3.2
+Version: 0.3.3
 Summary: Unit of Measure conversion tool
 Home-page: http://github.com/schlumberger/UOM
 Author: Velizar VESSELINOV
@@ -24,8 +24,8 @@ Description: # UOM
         
         ## Install
         ```
-        gsutil cp gs://slb_dl/whl/uom-0.3-py2.py3-none-any.whl .
-        pip install uom-0.3-py2.py3-none-any.whl
+        gsutil cp gs://slb_dl/whl/uom-0.3.3-py2.py3-none-any.whl .
+        pip install uom-0.3.3-py2.py3-none-any.whl
         ```
         
         ## Examples
