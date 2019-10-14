@@ -52,6 +52,7 @@ UNIT_ALIAS_DICT = {
     'metres': 'm',
     'м': 'm',
     'deg/100ft': '0.01 dega/ft',
+    'dega/100ft': '0.01 dega/ft',
     '0.01 deg/ft': '0.01 dega/ft',
     'feet': 'ft',
     'FT': 'ft',

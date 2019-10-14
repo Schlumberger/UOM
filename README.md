@@ -5,6 +5,11 @@
 [![Build Status](https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master)](https://travis-ci.com/Schlumberger/UOM)
 [![Coverage Status](https://coveralls.io/repos/Schlumberger/UOM/badge.svg?branch=master&service=github&t=ETSOWO)](https://coveralls.io/github/Schlumberger/UOM?branch=master)
 
+# Build package
+
+pip3.7 install wheel
+python3.7 setup.py bdist_wheel
+
 # Unit of Measure conversion tool
 
 The conversion factors and unit symbols are based on the Energistics UOM 1.0:
@@ -16,8 +21,8 @@ The units are cases sensitives.
 
 ## Install
 ```
-gsutil cp gs://slb_dl/whl/uom-0.3.3-py2.py3-none-any.whl .
-pip install uom-0.3.3-py2.py3-none-any.whl
+gsutil cp gs://slb_dl/whl/uom-0.3.4-py2.py3-none-any.whl .
+pip install uom-0.3.4-py2.py3-none-any.whl
 ```
 
 ## Examples
