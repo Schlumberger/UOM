@@ -13,7 +13,7 @@ python3.7 setup.py bdist_wheel
 # Unit of Measure conversion tool
 
 The conversion factors and unit symbols are based on the Energistics UOM 1.0:
-http://www.energistics.org/news/energistics-publishes-unit-of-measure-standard-v1-0
+https://www.energistics.org/energistics-unit-of-measure-standard/
 extended with few extra unit aliases and "unitless" special unit that cannot be converted.
 
 The units are cases sensitives.
