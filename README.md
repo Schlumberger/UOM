@@ -34,22 +34,22 @@ Please find few example of possible utilization:
 ```
 from uom import conversion_factors
 
-scale, offset = conversion_factors(source="m", target="ft")
+scale, offset = conversion_factors(source='m', target='ft')
 ```
 ### Convert a value from one unit to another
 
 ```
 from uom import convert_value
 
-print(convert(value=10, source="m", target="ft"))
+print(convert(value=10, source='m', target='ft'))
 ```
 ### Return the base (SI) unit and if you are using unit alias you can find the equivalent Energistics UOM symbol
 
 ```
 from uom import base_unit, unit_alias
 
-print(base_unit("kft.lbf"))
-print(unit_alias("kft.lbf"))
+print(base_unit('kft.lbf'))
+print(unit_alias('kft.lbf'))
 ```
 
 If you have suggestions for improvement or you found bugs, please don't hesitate to put them in the issue list.
