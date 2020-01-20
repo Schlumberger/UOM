@@ -7,8 +7,8 @@
 
 # Build package
 
-pip3.7 install wheel
-python3.7 setup.py bdist_wheel
+pip3.8 install wheel
+python3.8 setup.py bdist_wheel
 
 # Unit of Measure conversion tool
 
@@ -21,8 +21,8 @@ The units are cases sensitives.
 
 ## Install
 ```
-gsutil cp gs://slb_dl/whl/uom-0.3.4-py2.py3-none-any.whl .
-pip install uom-0.3.4-py2.py3-none-any.whl
+gsutil cp gs://slb_dl/whl/uom-0.3.5-py2.py3-none-any.whl .
+pip install uom-0.3.5-py2.py3-none-any.whl
 ```
 
 ## Examples

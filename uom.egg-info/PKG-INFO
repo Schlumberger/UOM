@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: uom
-Version: 0.3.4
+Version: 0.3.5
 Summary: Unit of Measure conversion tool
 Home-page: http://github.com/schlumberger/UOM
 Author: Velizar VESSELINOV
@@ -13,10 +13,15 @@ Description: # UOM
         [![Build Status](https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master)](https://travis-ci.com/Schlumberger/UOM)
         [![Coverage Status](https://coveralls.io/repos/Schlumberger/UOM/badge.svg?branch=master&service=github&t=ETSOWO)](https://coveralls.io/github/Schlumberger/UOM?branch=master)
         
+        # Build package
+        
+        pip3.8 install wheel
+        python3.8 setup.py bdist_wheel
+        
         # Unit of Measure conversion tool
         
         The conversion factors and unit symbols are based on the Energistics UOM 1.0:
-        http://www.energistics.org/news/energistics-publishes-unit-of-measure-standard-v1-0
+        https://www.energistics.org/energistics-unit-of-measure-standard/
         extended with few extra unit aliases and "unitless" special unit that cannot be converted.
         
         The units are cases sensitives.
@@ -24,8 +29,8 @@ Description: # UOM
         
         ## Install
         ```
-        gsutil cp gs://slb_dl/whl/uom-0.3.3-py2.py3-none-any.whl .
-        pip install uom-0.3.3-py2.py3-none-any.whl
+        gsutil cp gs://slb_dl/whl/uom-0.3.5-py2.py3-none-any.whl .
+        pip install uom-0.3.5-py2.py3-none-any.whl
         ```
         
         ## Examples
@@ -37,22 +42,22 @@ Description: # UOM
         ```
         from uom import conversion_factors
         
-        scale, offset = conversion_factors(source="m", target="ft")
+        scale, offset = conversion_factors(source='m', target='ft')
         ```
         ### Convert a value from one unit to another
         
         ```
         from uom import convert_value
         
-        print(convert(value=10, source="m", target="ft"))
+        print(convert(value=10, source='m', target='ft'))
         ```
         ### Return the base (SI) unit and if you are using unit alias you can find the equivalent Energistics UOM symbol
         
         ```
         from uom import base_unit, unit_alias
         
-        print(base_unit("kft.lbf"))
-        print(unit_alias("kft.lbf"))
+        print(base_unit('kft.lbf'))
+        print(unit_alias('kft.lbf'))
         ```
         
         If you have suggestions for improvement or you found bugs, please don't hesitate to put them in the issue list.
@@ -65,7 +70,8 @@ Classifier: Intended Audience :: Customer Service
 Classifier: Intended Audience :: Developers
 Classifier: Intended Audience :: Science/Research
 Classifier: License :: OSI Approved :: MIT License
-Classifier: Programming Language :: Python :: 2.7
-Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
 Classifier: Topic :: Scientific/Engineering
 Classifier: Topic :: Scientific/Engineering :: Information Analysis

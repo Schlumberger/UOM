@@ -161,6 +161,10 @@ UNIT_ALIAS_DICT = {
     'LBS': 'lbf',
     'lbs': 'lbf',
     'kg/(m.s2)': 'Pa',
+    'AHrs': 'A.h',
+    'amp-hours': 'A.h',
+    'degreesCelsius': 'degC',
+    'KGM3': 'kg/m3',
     '0.01 m3/m3': '0.01 bbl/bbl'
 }
 
