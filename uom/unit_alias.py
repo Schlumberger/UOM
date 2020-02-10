@@ -164,7 +164,10 @@ UNIT_ALIAS_DICT = {
     'AHrs': 'A.h',
     'amp-hours': 'A.h',
     'degreesCelsius': 'degC',
+    'KNM': 'kN.m',
     'KGM3': 'kg/m3',
+    'KDN': 'kdyne',
+    'RPG': 'rev/gal[US]',
     '0.01 m3/m3': '0.01 bbl/bbl'
 }
 

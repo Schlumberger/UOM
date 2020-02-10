@@ -215,6 +215,9 @@ rev/ft,revolution per foot,A/L,false,derived,rad/m,DERIVED,true,0,6.283185307179
 rev/m,revolution per metre,A/L,false,derived,rad/m,DERIVED,true,0,6.283185307179586,1,0,,
 rad/m3,radian per cubic metre,A/L3,true,derived,IS-BASE,,,,,,,,
 rad/ft3,radian per cubic foot,A/L3,false,derived,rad/m3,DERIVED,true,0,1,0.028316846592,0,,
+rev/gal[US],revolution per US gallon,A/L3,false,derived,rad/m3,DERIVED,true,0,6.283185307179586,3.785411784E-3,0,,
+rad/gal[US],revolution per US gallon,A/L3,false,derived,rad/m3,DERIVED,true,0,1,3.785411784E-3,0,,
+dega/m3,angular degree per cubic foot,A/L3,false,derived,rad/m3,DERIVED,true,0,3.141592653589793,180,0,,
 rpm,revolution per minute,A/T,false,atom,rad/s,DERIVED,true,0,6.283185307179586,60,0,rev/min,
 rad/s,radian per second,A/T,true,derived,IS-BASE,,,,,,,,
 dega/h,angular degree per hour,A/T,true,derived,rad/s,DERIVED,true,0,3.141592653589793,6.48E5,0,,((pi/180) / 3600) radian per second
@@ -310,7 +313,7 @@ uF/m,microfarad per metre,I2T4/L3M,true,derived,F/m,DERIVED,true,0,1E-6,1,0,,
 F/m,farad per metre,I2T4/L3M,true,derived,IS-BASE,,,,,,,,
 A.m2,ampere square metre,IL2,true,derived,IS-BASE,,,,,,,,
 C.m,coulomb metre,ILT,true,derived,IS-BASE,,,,,,,,
-C,coulomb,IT,true,atom-special,IS-BASE,,,,,,,A.s,"The time integral of electric current, equal to 1 A.s"
+C,coulomb,IT,true,atom-special,IS-BASE,,,,,,,,"The time integral of electric current, equal to 1 A.s"
 A.h,ampere hour,IT,true,derived,C,DERIVED,true,0,3600,1,0,,
 A.s,ampere second,IT,true,derived,C,DERIVED,true,0,1,1,0,,
 cC,centicoulomb,IT,true,prefixed,C,DERIVED,true,0,0.01,1,0,,
