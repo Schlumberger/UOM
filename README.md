@@ -16,7 +16,7 @@ The conversion factors and unit symbols are based on the Energistics UOM 1.0:
 https://www.energistics.org/energistics-unit-of-measure-standard/
 extended with few extra unit aliases and "unitless" special unit that cannot be converted.
 
-The units are cases sensitives.
+The units are case sensitives.
 
 
 ## Install
@@ -27,7 +27,7 @@ pip install uom-0.3.7-py2.py3-none-any.whl
 
 ## Examples
 
-Please find few example of possible utilization:
+Please find a few examples of possible utilization:
 
 ### Find conversion factors to be applied to convert from one unit to another
 

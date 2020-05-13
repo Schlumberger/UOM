@@ -173,7 +173,7 @@ UNIT_ALIAS_DICT = {
 
 
 def unit_alias(alias):
-    """For a given unit alias return the approprieated unit."""
+    """For a given unit alias return the appropriated unit."""
     if alias in UNIT_ALIAS_DICT:
         return UNIT_ALIAS_DICT[alias]
     else:
