@@ -70,7 +70,9 @@ UNIT_ALIAS_DICT = {
     'deg/30m': '1/30 dega/m',
     'deg/m': 'dega/m',
     '1000 ft.lbf': '1000 lbf.ft',
+    '1000ft.lbf': '1000 lbf.ft',
     '1000 lbf': 'klbf',
+    '1000lbf': 'klbf',
     '1000 lbm': 'klbm',
     'kkgf': 'Mgf',
     'ppg': 'lbm/gal[US]',
@@ -168,12 +170,13 @@ UNIT_ALIAS_DICT = {
     'KGM3': 'kg/m3',
     'KDN': 'kdyne',
     'RPG': 'rev/gal[US]',
-    '0.01 m3/m3': '0.01 bbl/bbl'
+    '0.01 m3/m3': '0.01 bbl/bbl',
+    '0.001/(ohm.m)': 'mS'
 }
 
 
 def unit_alias(alias):
-    """For a given unit alias return the approprieated unit."""
+    """For a given unit alias return the appropriated unit."""
     if alias in UNIT_ALIAS_DICT:
         return UNIT_ALIAS_DICT[alias]
     else:

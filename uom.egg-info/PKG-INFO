@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: uom
-Version: 0.3.8
+Version: 0.4.0
 Summary: Unit of Measure conversion tool
 Home-page: http://github.com/schlumberger/UOM
 Author: Velizar VESSELINOV
@@ -24,18 +24,18 @@ Description: # UOM
         https://www.energistics.org/energistics-unit-of-measure-standard/
         extended with few extra unit aliases and "unitless" special unit that cannot be converted.
         
-        The units are cases sensitives.
+        The units are case sensitives.
         
         
         ## Install
         ```
-        gsutil cp gs://slb_dl/whl/uom-0.3.7-py2.py3-none-any.whl .
-        pip install uom-0.3.7-py2.py3-none-any.whl
+        gsutil cp gs://slb_dl/whl/uom-0.4.0-py2.py3-none-any.whl .
+        pip install uom-0.4.0-py2.py3-none-any.whl
         ```
         
         ## Examples
         
-        Please find few example of possible utilization:
+        Please find a few examples of possible utilization:
         
         ### Find conversion factors to be applied to convert from one unit to another
         
