@@ -15,7 +15,7 @@ def readme():
 
 
 setup(name='uom',
-      version='0.5.0',
+      version='0.5.1',
       description='Unit of Measure conversion tool',
       long_description=readme(),
       classifiers=['Development Status :: 5 - Production/Stable',

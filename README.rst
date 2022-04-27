@@ -53,8 +53,7 @@ Install
 
 .. code-block::
 
-   gsutil cp gs://slb_dl/whl/uom-0.4.0-py2.py3-none-any.whl .
-   pip install uom-0.4.0-py2.py3-none-any.whl
+   pip install uom
 
 Examples
 --------
