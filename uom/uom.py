@@ -51,7 +51,7 @@ def base_unit(unit_or_alias, verbose=False):
                                                 uderlying_def))
 
                 return unit
-            
+
             if verbose:
                 print('{} => {} [Case2: IsBase, UD = {} and available]'
                         .format(unit_or_alias, unit, uderlying_def))
@@ -63,7 +63,7 @@ def base_unit(unit_or_alias, verbose=False):
                     print("Base unit {} not in the index".format(unit2))
 
                 return uderlying_def
-            
+
             if verbose:
                 print("Base unit {} in the index".format(b_unit))
         else:
