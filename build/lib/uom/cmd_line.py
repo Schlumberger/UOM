@@ -1,7 +1,9 @@
 """Command line option."""
+from __future__ import absolute_import
+
 from argparse import ArgumentParser
 
-from .uom import convert, base_unit
+from .uom import base_unit, convert
 
 
 def cmd_convert(arg=None):

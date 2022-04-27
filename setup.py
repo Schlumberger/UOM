@@ -10,12 +10,12 @@ def requirements():
 
 def readme():
     """Readme from source."""
-    with open('README.md', 'r') as fil:
+    with open('README.rst', 'r') as fil:
         return fil.read()
 
 
 setup(name='uom',
-      version='0.4.0',
+      version='0.5.0',
       description='Unit of Measure conversion tool',
       long_description=readme(),
       classifiers=['Development Status :: 5 - Production/Stable',

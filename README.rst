@@ -1,25 +1,3 @@
-Metadata-Version: 2.1
-Name: uom
-Version: 0.5.0
-Summary: Unit of Measure conversion tool
-Home-page: http://github.com/schlumberger/UOM
-Author: Velizar VESSELINOV
-Author-email: vvesselinov@slb.com
-License: MIT
-Keywords: uom unit measurement measure energistics oilfield
-Platform: UNKNOWN
-Classifier: Development Status :: 5 - Production/Stable
-Classifier: Environment :: Console
-Classifier: Intended Audience :: Customer Service
-Classifier: Intended Audience :: Developers
-Classifier: Intended Audience :: Science/Research
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Programming Language :: Python :: 3.6
-Classifier: Programming Language :: Python :: 3.7
-Classifier: Programming Language :: Python :: 3.8
-Classifier: Topic :: Scientific/Engineering
-Classifier: Topic :: Scientific/Engineering :: Information Analysis
-
 
 UOM
 ===
@@ -112,5 +90,3 @@ Return the base (SI) unit and if you are using unit alias you can find the equiv
    print(unit_alias('kft.lbf'))
 
 If you have suggestions for improvement or you found bugs, please don't hesitate to put them in the issue list.
-
-
