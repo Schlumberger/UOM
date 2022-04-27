@@ -53,8 +53,8 @@ def base_unit(unit_or_alias, verbose=False):
                 return unit
 
             if verbose:
-                print('{} => {} [Case2: IsBase, UD = {} and available]'
-                        .format(unit_or_alias, unit, uderlying_def))
+                print('{} => {} [Case2: IsBase, UD = {} and available]'.format(
+                    unit_or_alias, unit, uderlying_def))
 
             unit2 = DF_UOM["baseUnit"][uderlying_def]
 
