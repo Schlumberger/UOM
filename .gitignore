@@ -4,6 +4,8 @@
 .coverage
 
 build/*
+_dist/*
+dist/*
 
 uom/uom.xlsx
 
