@@ -22,7 +22,6 @@ UNIT_ALIAS_DICT = {
     'GAL/MIN': 'gal[US]/min',
     'GPM': 'gal[US]/min',
     'USGAL/MIN': 'gal[US]/min',
-    'gal/min': 'gal[US]/min',
     'galUS/min': 'gal[US]/min',
     'gpm': 'gal[US]/min',
     'M3MN': 'm3/min',
