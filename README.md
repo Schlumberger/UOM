@@ -1,9 +1,9 @@
 # UOM
 
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/139005588a93460293258a672797615a)](https://www.codacy.com)
-[![Code Issues](https://www.quantifiedcode.com/api/v1/project/ab7fbdf0551643a3b73dcf5fcd881572/badge.svg)](https://www.quantifiedcode.com/app/project/ab7fbdf0551643a3b73dcf5fcd881572)
 [![Build Status](https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master)](https://travis-ci.com/Schlumberger/UOM)
 [![Coverage Status](https://coveralls.io/repos/Schlumberger/UOM/badge.svg?branch=master&service=github&t=ETSOWO)](https://coveralls.io/github/Schlumberger/UOM?branch=master)
+[![CodeQL](https://github.com/Schlumberger/UOM/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Schlumberger/UOM/actions/workflows/codeql-analysis.yml)
 
 # Build package
 
