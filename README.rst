@@ -3,6 +3,16 @@ UOM
 ===
 
 
+.. image:: https://app.codacy.com/project/badge/Grade/f2c1140afacf439c8fec00194acdc7db
+   :target: https://www.codacy.com/gh/Schlumberger/UOM/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Schlumberger/UOM&amp;utm_campaign=Badge_Grade
+   :alt: Codacy Badge
+
+
+.. image:: https://scrutinizer-ci.com/g/Schlumberger/UOM/badges/quality-score.png?b=master
+   :target: https://scrutinizer-ci.com/g/Schlumberger/UOM/?branch=master
+   :alt: Scrutinizer Code Quality
+
+
 .. image:: https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master
    :target: https://travis-ci.com/Schlumberger/UOM
    :alt: Build Status
@@ -18,19 +28,11 @@ UOM
    :alt: CircleCI
 
 
-.. image:: https://scrutinizer-ci.com/g/Schlumberger/UOM/badges/quality-score.png?b=master
-   :target: https://scrutinizer-ci.com/g/Schlumberger/UOM/?branch=master
-   :alt: Scrutinizer Code Quality
-
-
 .. image:: https://coveralls.io/repos/github/Schlumberger/UOM/badge.svg?branch=master
    :target: https://coveralls.io/github/Schlumberger/UOM?branch=master
    :alt: Coverage Status
 
 
-.. image:: https://app.codacy.com/project/badge/Grade/f2c1140afacf439c8fec00194acdc7db
-   :target: https://www.codacy.com/gh/Schlumberger/UOM/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Schlumberger/UOM&amp;utm_campaign=Badge_Grade
-   :alt: Codacy Badge
 
 
 Build package

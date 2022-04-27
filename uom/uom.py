@@ -11,7 +11,7 @@ def base_conversion_factors(unit_or_alias, verbose=False):
 
     if unit not in DF_UOM.index:
         if verbose:
-            print("Unit {} unknown.".format(unit_or_alias))
+            print(f'Unit {unit_or_alias} unknown.')
 
         return None, None, None
 
@@ -20,7 +20,7 @@ def base_conversion_factors(unit_or_alias, verbose=False):
 
     if DF_UOM['baseUnit'][unit] == 'IS-BASE':
         if verbose:
-            print("The unit {0} it is a base unit.".format(unit))
+            print('The unit {unit} it is a base unit.')
 
         return 0, 1, 1
 
@@ -33,53 +33,47 @@ def base_unit(unit_or_alias, verbose=False):
 
     if unit not in DF_UOM.index:
         if verbose:
-            print('Unit {} unknown.'.format(unit_or_alias))
+            print(f'Unit {unit_or_alias} unknown.')
 
         return None
 
     b_unit = DF_UOM['baseUnit'][unit]
-    uderlying_def = DF_UOM["underlyingDef"][unit]
+    underlying_def = DF_UOM['underlyingDef'][unit]
 
     if verbose:
-        print('Input: {}, unit: {}, base_unit: {}, underlying_unit: {}'
-              .format(unit_or_alias, unit, b_unit, uderlying_def))
+        print(f'Input: {unit_or_alias}, unit: {unit}, base_unit: {b_unit}, underlying_unit: {underlying_def}')
 
     if b_unit == 'IS-BASE':
-        if uderlying_def:
-            if uderlying_def not in DF_UOM.index:
+        if underlying_def:
+            if underlying_def not in DF_UOM.index:
                 if verbose:
-                    print('{} => {} [Case1: IsBase, UD = {}, but not'
-                          ' available]>'.format(unit_or_alias, unit,
-                                                uderlying_def))
+                    print(f'{unit_or_alias} => {unit} [Case1: IsBase, UD = {underlying_def}, but not available]>')
 
                 return unit
 
             if verbose:
-                print('{} => {} [Case2: IsBase, UD = {} and available]'.format(
-                    unit_or_alias, unit, uderlying_def))
+                print(f'{unit_or_alias} => {unit} [Case2: IsBase, UD = {underlying_def} and available]')
 
-            unit2 = DF_UOM['baseUnit'][uderlying_def]
+            unit2 = DF_UOM['baseUnit'][underlying_def]
 
             if unit2 not in DF_UOM.index:
                 if verbose:
-                    print('Base unit {} not in the index'.format(unit2))
+                    print(f'Base unit {unit2} not in the index')
 
-                return uderlying_def
+                return underlying_def
 
             if verbose:
-                print('Base unit {} in the index'.format(b_unit))
+                print(f'Base unit {b_unit} in the index')
         else:
             if verbose:
-                print('{} => {} [Case3: IsBase, UD is missing]'
-                      .format(unit_or_alias, unit))
+                print(f'{unit_or_alias} => {unit} [Case3: IsBase, UD is missing]')
 
             return unit
-    else:
-        if verbose:
-            print('{} => {} [Case4: IsNotBase available]'.format(unit_or_alias,
-                                                                 b_unit))
 
-        return base_unit(b_unit, verbose)
+    if verbose:
+        print(f'{unit_or_alias} => {b_unit} [Case4: IsNotBase available]')
+
+    return base_unit(b_unit, verbose)
 
 
 def conversion_factors(source, target, verbose=False):
@@ -92,8 +86,8 @@ def conversion_factors(source, target, verbose=False):
 
     if source_base_unit != target_base_unit:
         if verbose:
-            print("The units {0} and {1} are not compatible.".format(source,
-                                                                     target))
+            print(f'The units {source} and {target} are not compatible.')
+
         source_dim = DF_UOM['dimension'][unit_alias(source)]
 
         if source_dim == DF_UOM['dimension'][unit_alias(target)] and \
@@ -109,7 +103,7 @@ def conversion_factors(source, target, verbose=False):
     offset = source_a * target_c / source_c / target_b - target_a / target_b
 
     if verbose:
-        print("Scale: {0}, offset: {1}".format(scale, offset))
+        print(f'Scale: {scale}, offset: {offset}')
 
     return scale, offset
 

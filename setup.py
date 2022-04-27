@@ -15,7 +15,7 @@ def readme():
 
 
 setup(name='uom',
-      version='0.5.1',
+      version='0.5.2',
       description='Unit of Measure conversion tool',
       long_description=readme(),
       classifiers=['Development Status :: 5 - Production/Stable',
@@ -27,6 +27,8 @@ setup(name='uom',
                    'Programming Language :: Python :: 3.6',
                    'Programming Language :: Python :: 3.7',
                    'Programming Language :: Python :: 3.8',
+                   'Programming Language :: Python :: 3.9',
+                   'Programming Language :: Python :: 3.10',
                    'Topic :: Scientific/Engineering',
                    'Topic :: Scientific/Engineering :: Information Analysis'],
       keywords='uom unit measurement measure energistics oilfield',

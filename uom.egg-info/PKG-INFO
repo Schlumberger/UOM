@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: uom
-Version: 0.5.1
+Version: 0.5.2
 Summary: Unit of Measure conversion tool
 Home-page: http://github.com/schlumberger/UOM
 Author: Velizar VESSELINOV
@@ -17,12 +17,24 @@ Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3.6
 Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
 Classifier: Topic :: Scientific/Engineering
 Classifier: Topic :: Scientific/Engineering :: Information Analysis
 
 
 UOM
 ===
+
+
+.. image:: https://app.codacy.com/project/badge/Grade/f2c1140afacf439c8fec00194acdc7db
+   :target: https://www.codacy.com/gh/Schlumberger/UOM/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Schlumberger/UOM&amp;utm_campaign=Badge_Grade
+   :alt: Codacy Badge
+
+
+.. image:: https://scrutinizer-ci.com/g/Schlumberger/UOM/badges/quality-score.png?b=master
+   :target: https://scrutinizer-ci.com/g/Schlumberger/UOM/?branch=master
+   :alt: Scrutinizer Code Quality
 
 
 .. image:: https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master
@@ -40,19 +52,11 @@ UOM
    :alt: CircleCI
 
 
-.. image:: https://scrutinizer-ci.com/g/Schlumberger/UOM/badges/quality-score.png?b=master
-   :target: https://scrutinizer-ci.com/g/Schlumberger/UOM/?branch=master
-   :alt: Scrutinizer Code Quality
-
-
 .. image:: https://coveralls.io/repos/github/Schlumberger/UOM/badge.svg?branch=master
    :target: https://coveralls.io/github/Schlumberger/UOM?branch=master
    :alt: Coverage Status
 
 
-.. image:: https://app.codacy.com/project/badge/Grade/f2c1140afacf439c8fec00194acdc7db
-   :target: https://www.codacy.com/gh/Schlumberger/UOM/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Schlumberger/UOM&amp;utm_campaign=Badge_Grade
-   :alt: Codacy Badge
 
 
 Build package
