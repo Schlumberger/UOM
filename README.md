@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master)](https://travis-ci.com/Schlumberger/UOM)
 [![Coverage Status](https://coveralls.io/repos/Schlumberger/UOM/badge.svg?branch=master&service=github&t=ETSOWO)](https://coveralls.io/github/Schlumberger/UOM?branch=master)
 [![CodeQL](https://github.com/Schlumberger/UOM/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Schlumberger/UOM/actions/workflows/codeql-analysis.yml)
+[![CircleCI](https://circleci.com/gh/Schlumberger/UOM/tree/master.svg?style=svg)](https://circleci.com/gh/Schlumberger/UOM/tree/master)
 
 # Build package
 
