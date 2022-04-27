@@ -1,4 +1,6 @@
 """UOM conversion tool."""
+from __future__ import absolute_import
+
 from .unit_alias import unit_alias
 from .uomdata import DF_UOM
 
@@ -14,15 +16,15 @@ def base_conversion_factors(unit_or_alias, verbose=False):
         return None, None, None
 
     if verbose:
-        print(unit, DF_UOM["A"][unit], DF_UOM["B"][unit], DF_UOM["C"][unit])
+        print(unit, DF_UOM['A'][unit], DF_UOM['B'][unit], DF_UOM['C'][unit])
 
-    if DF_UOM["baseUnit"][unit] == "IS-BASE":
+    if DF_UOM['baseUnit'][unit] == 'IS-BASE':
         if verbose:
             print("The unit {0} it is a base unit.".format(unit))
 
         return 0, 1, 1
 
-    return DF_UOM["A"][unit], DF_UOM["B"][unit], DF_UOM["C"][unit]
+    return DF_UOM['A'][unit], DF_UOM['B'][unit], DF_UOM['C'][unit]
 
 
 def base_unit(unit_or_alias, verbose=False):
@@ -31,18 +33,18 @@ def base_unit(unit_or_alias, verbose=False):
 
     if unit not in DF_UOM.index:
         if verbose:
-            print("Unit {} unknown.".format(unit_or_alias))
+            print('Unit {} unknown.'.format(unit_or_alias))
 
         return None
 
-    b_unit = DF_UOM["baseUnit"][unit]
+    b_unit = DF_UOM['baseUnit'][unit]
     uderlying_def = DF_UOM["underlyingDef"][unit]
 
     if verbose:
-        print("Input: {}, unit: {}, base_unit: {}, underlying_unit: {}"
+        print('Input: {}, unit: {}, base_unit: {}, underlying_unit: {}'
               .format(unit_or_alias, unit, b_unit, uderlying_def))
 
-    if b_unit == "IS-BASE":
+    if b_unit == 'IS-BASE':
         if uderlying_def:
             if uderlying_def not in DF_UOM.index:
                 if verbose:
@@ -56,16 +58,16 @@ def base_unit(unit_or_alias, verbose=False):
                 print('{} => {} [Case2: IsBase, UD = {} and available]'.format(
                     unit_or_alias, unit, uderlying_def))
 
-            unit2 = DF_UOM["baseUnit"][uderlying_def]
+            unit2 = DF_UOM['baseUnit'][uderlying_def]
 
             if unit2 not in DF_UOM.index:
                 if verbose:
-                    print("Base unit {} not in the index".format(unit2))
+                    print('Base unit {} not in the index'.format(unit2))
 
                 return uderlying_def
 
             if verbose:
-                print("Base unit {} in the index".format(b_unit))
+                print('Base unit {} in the index'.format(b_unit))
         else:
             if verbose:
                 print('{} => {} [Case3: IsBase, UD is missing]'

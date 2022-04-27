@@ -1,9 +1,11 @@
 """Test functions."""
+from __future__ import absolute_import
+
 from unittest import TestCase, main
 
 from pandas import DataFrame
 
-from ..cmd_line import cmd_convert, cmd_base_unit
+from ..cmd_line import cmd_base_unit, cmd_convert
 from ..unit_alias import UNIT_ALIAS_DICT
 from ..uom import (base_conversion_factors, base_unit, conversion_factors,
                    convert, unit_alias)
@@ -77,7 +79,7 @@ class UOMTestCase(TestCase):
 
         for k in sorted(tests):
             i = tests[k]
-            arg = "{} -s={} -t={}".format(i[0], i[1], i[2])
+            arg = '{} -s={} -t={}'.format(i[0], i[1], i[2])
             print('\n===== arg:', arg)
             out = cmd_convert(arg)
 
@@ -85,7 +87,7 @@ class UOMTestCase(TestCase):
 
         for k in sorted(tests):
             i = tests[k]
-            arg = "{} -s={} -t={} -v".format(i[0], i[1], i[2])
+            arg = '{} -s={} -t={} -v'.format(i[0], i[1], i[2])
             print('\n===== arg:', arg)
             out = cmd_convert(arg)
 
@@ -103,7 +105,7 @@ class UOMTestCase(TestCase):
 
         for k in sorted(tests):
             i = tests[k]
-            arg = "{} -s={} -t={}".format(i[0], i[1], i[2])
+            arg = '{} -s={} -t={}'.format(i[0], i[1], i[2])
             print('\n===== arg:', arg)
             out = cmd_convert(arg)
 
@@ -112,13 +114,13 @@ class UOMTestCase(TestCase):
     def test_conversion_of_list(self):
         """Test conversion of list function."""
         tests = {
-            "m => ft": [[10, 100], "m", "ft",
+            'm => ft': [[10, 100], 'm', 'ft',
                         [32.80839895013123, 328.0839895013123]],
         }
 
         for k in sorted(tests):
             i = tests[k]
-            arg = "{} -s={} -t={}".format(' '.join([str(x) for x in i[0]]),
+            arg = '{} -s={} -t={}'.format(' '.join([str(x) for x in i[0]]),
                                           i[1], i[2])
 
             print('\n===== arg:', arg)
@@ -128,7 +130,7 @@ class UOMTestCase(TestCase):
 
     def test_conversion_of_dataframe(self):
         """Test conversion of list function."""
-        dtf = DataFrame({"m": [10, 100], "ft":
+        dtf = DataFrame({'m': [10, 100], 'ft':
                          [32.80839895013123, 328.0839895013123]})
 
         out = convert(dtf['m'], 'm', 'ft')
