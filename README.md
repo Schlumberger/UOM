@@ -7,8 +7,8 @@
 
 # Build package
 
-pip3.8 install wheel
-python3.8 setup.py bdist_wheel
+pip3 install wheel
+python3 setup.py bdist_wheel
 
 # Unit of Measure conversion tool
 

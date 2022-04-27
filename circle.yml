@@ -2,7 +2,7 @@ machine:
   environment:
     COVERALLS_REPO_TOKEN: aWBnb7oePKUVnI0gTeTqYGvhgM0vsw3M4
   python:
-    version: 3.5.1
+    version: 3.10
       #- 2.7.11
 
 dependencies:
