@@ -35,7 +35,6 @@ UNIT_ALIAS_DICT = {
     'мин–1': '1/min',
     'kft.lbf': '1000 lbf.ft',
     'klbf.ft': '1000 lbf.ft',
-    'KFLB': '1000 lbf.ft',
     'KFT.LBF': '1000 lbf.ft',
     'Kft.lbs': '1000 lbf.ft',
     'Klbf': '1000 lbf.ft',
@@ -82,7 +81,6 @@ UNIT_ALIAS_DICT = {
     'PPG': 'lbm/gal[US]',
     'PPGE': 'lbm/gal[US]',
     'lb/U.S.gal': 'lbm/gal[US]',
-    'lbm/gal': 'lbm/gal[US]',
     'lbm/galUS': 'lbm/gal[US]',
     '1000 kgf': 'Mgf',
     'KKGF': 'Mgf',
@@ -92,11 +90,9 @@ UNIT_ALIAS_DICT = {
     'volts': 'V',
     'В': 'V',
     'Mv': 'MV',
-    'deg C': 'degC',
     'DEGC': 'degC',
     'Cel': 'degC',
     'DEG C': 'degC',
-    'DEGC': 'degC',
     'DEG_C': 'degC',
     'DEGc': 'degC',
     'DegC': 'degC',
@@ -178,5 +174,5 @@ def unit_alias(alias):
     """For a given unit alias return the appropriated unit."""
     if alias in UNIT_ALIAS_DICT:
         return UNIT_ALIAS_DICT[alias]
-    else:
-        return alias
+    
+    return alias
