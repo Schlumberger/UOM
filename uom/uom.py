@@ -51,21 +51,21 @@ def base_unit(unit_or_alias, verbose=False):
                                                 uderlying_def))
 
                 return unit
-            else:
+            
+            if verbose:
+                print('{} => {} [Case2: IsBase, UD = {} and available]'
+                        .format(unit_or_alias, unit, uderlying_def))
+
+            unit2 = DF_UOM["baseUnit"][uderlying_def]
+
+            if unit2 not in DF_UOM.index:
                 if verbose:
-                    print('{} => {} [Case2: IsBase, UD = {} and available]'
-                          .format(unit_or_alias, unit, uderlying_def))
+                    print("Base unit {} not in the index".format(unit2))
 
-                unit2 = DF_UOM["baseUnit"][uderlying_def]
-
-                if unit2 not in DF_UOM.index:
-                    if verbose:
-                        print("Base unit {} not in the index".format(unit2))
-
-                    return uderlying_def
-                else:
-                    if verbose:
-                        print("Base unit {} in the index".format(b_unit))
+                return uderlying_def
+            
+            if verbose:
+                print("Base unit {} in the index".format(b_unit))
         else:
             if verbose:
                 print('{} => {} [Case3: IsBase, UD is missing]'
