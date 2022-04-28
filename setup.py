@@ -10,7 +10,7 @@ def requirements():
 
 def readme():
     """Readme from source."""
-    with open('README.rst', 'r') as fil:
+    with open('README.md', 'r') as fil:
         return fil.read()
 
 
@@ -18,6 +18,7 @@ setup(name='uom',
       version='0.5.2',
       description='Unit of Measure conversion tool',
       long_description=readme(),
+      long_description_content_type='text/markdown',
       classifiers=['Development Status :: 5 - Production/Stable',
                    'Environment :: Console',
                    'Intended Audience :: Customer Service',

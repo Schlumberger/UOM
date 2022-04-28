@@ -41,18 +41,21 @@ def base_unit(unit_or_alias, verbose=False):
     underlying_def = DF_UOM['underlyingDef'][unit]
 
     if verbose:
-        print(f'Input: {unit_or_alias}, unit: {unit}, base_unit: {b_unit}, underlying_unit: {underlying_def}')
+        print(f'Input: {unit_or_alias}, unit: {unit}, base_unit: {b_unit}, underlying_unit: '
+              f'{underlying_def}')
 
     if b_unit == 'IS-BASE':
         if underlying_def:
             if underlying_def not in DF_UOM.index:
                 if verbose:
-                    print(f'{unit_or_alias} => {n} [Case1: IsBase, UD = {underlying_def}, but not available]>')
+                    print(f'{unit_or_alias} => {n} [Case1: IsBase, UD = {underlying_def}, but '
+                          'not available]>')
 
                 return unit
 
             if verbose:
-                print(f'{unit_or_alias} => {unit} [Case2: IsBase, UD = {underlying_def} and available]')
+                print(f'{unit_or_alias} => {unit} [Case2: IsBase, UD = {underlying_def} and '
+                      'available]')
 
             unit2 = DF_UOM['baseUnit'][underlying_def]
 
