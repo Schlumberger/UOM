@@ -8,7 +8,7 @@ jobs:
     - uses: actions/setup-python@v1
     - name: Unit tests
       run: |
-        pip insatall -r test-requirements.txt
+        pip install -r test-requirements.txt
         pytest
     - name: Coveralls
       uses: AndreMiras/coveralls-python-action@develop
