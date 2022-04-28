@@ -6,7 +6,7 @@ from .uomdata import DF_UOM
 
 
 def base_conversion_factors(unit_or_alias, verbose=False):
-    """"Return conversion facors to the base unit."""
+    """Return conversion facors to the base unit."""
     unit = unit_alias(unit_or_alias)
 
     if unit not in DF_UOM.index:

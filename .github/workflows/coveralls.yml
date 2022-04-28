@@ -1,5 +1,7 @@
 name: Coveralls
 on: [push, pull_request]
+env:
+  COVERALLS_REPO_TOKEN: JMrWlp4AZqr735mFBcRyt9LaCgyUwBV3Z
 jobs:
   test:
     runs-on: ubuntu-latest

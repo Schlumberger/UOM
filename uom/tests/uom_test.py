@@ -12,6 +12,7 @@ from ..uom import (base_conversion_factors, base_unit, conversion_factors,
 
 
 class UOMTestCase(TestCase):
+
     """Test class."""
 
     def test_conversion_of_value(self):
