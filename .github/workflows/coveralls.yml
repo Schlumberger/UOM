@@ -12,16 +12,16 @@ jobs:
       run: |
         pip install -r test-requirements.txt
         pytest
-    - name: Coveralls
-      uses: AndreMiras/coveralls-python-action@develop
-      with:
-        parallel: true
-        flag-name: Unit Test
-  coveralls_finish:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Coveralls Finished
-      uses: AndreMiras/coveralls-python-action@develop
-      with:
-        parallel-finished: true
+    # - name: Coveralls
+    #   uses: AndreMiras/coveralls-python-action@develop
+    #   with:
+    #     parallel: true
+    #     flag-name: Unit Test
+    - name: Run tests and collect coverage
+        run: pytest --cov --cov-report=xml
+    - name: Coverage
+        run: coverage run --source=uom setup.py test
+    - name: Coverage post
+        run: |
+          coverage report -m
+          coveralls
