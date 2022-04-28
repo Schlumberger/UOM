@@ -2,5 +2,7 @@
 source = uom
 
 [report]
-omit = uom/tests/* # Test
-       setup.py # setup file
+omit = # Test
+       uom/tests/*
+       # setup file
+       setup.py

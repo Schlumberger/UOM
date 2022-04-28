@@ -12,5 +12,4 @@ uom/uom.xlsx
 build/lib/uom/uomdata.py
 .vscode/settings.json
 .DS_Store
-.coveragerc
 coverage.xml
