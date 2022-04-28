@@ -1,5 +1,5 @@
 """UOM conversion tool."""
-from __future__ import absolute_import
+from __future__ import absolute_import, division
 
 from .unit_alias import unit_alias
 from .uomdata import DF_UOM

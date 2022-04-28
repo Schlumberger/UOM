@@ -14,14 +14,14 @@ build:
             - command: pip install -r test-requirements.txt
       tests:
         override:
+          - py-scrutinizer-run
+          - command: pylint-run
+            use_website_config: true
           - command: pytest --cov=./
             coverage:
               file: '.coverage'
               config_file: '.coveragerc'
               format: 'py-cc'
-          - py-scrutinizer-run
-          - command: pylint-run
-            use_website_config: true
 filter:
     excluded_paths:
         - '*/tests/*'
