@@ -11,6 +11,8 @@
 | CodeQL | [![CodeQL](https://github.com/Schlumberger/UOM/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Schlumberger/UOM/actions/workflows/codeql-analysis.yml) |
 | CircleCI | [![CircleCI](https://circleci.com/gh/Schlumberger/UOM/tree/master.svg?style=svg)](https://circleci.com/gh/Schlumberger/UOM/tree/master) |
 | TravisCI | [![Build Status](https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master)](https://travis-ci.com/Schlumberger/UOM) |
+| PyPI | [![PyPI Latest Release](https://img.shields.io/pypi/v/uom.svg)](https://pypi.org/project/uom/) [![Package Status](https://img.shields.io/pypi/status/uom.svg)](https://pypi.org/project/uom/) [![Python](https://img.shields.io/pypi/pyversions/uom.svg?style=plastic)](https://badge.fury.io/py/uom)
+|
 
 <!--
 ## Build package
