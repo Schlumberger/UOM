@@ -6,13 +6,13 @@ from setuptools import setup
 
 def requirements():
     """Requirement from source."""
-    with open('requirements.txt', 'r') as fil:
+    with open('requirements.txt', 'r', encoding='utf8') as fil:
         return fil.read().splitlines()
 
 
 def readme():
     """Readme from source."""
-    with open('README.md', 'r') as fil:
+    with open('README.md', 'r', encoding='utf8') as fil:
         return fil.read()
 
 
