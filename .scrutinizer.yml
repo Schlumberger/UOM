@@ -4,12 +4,12 @@ checks:
     duplicate_code: true
 build:
   environment:
-    variables:
-      CFLAGS: -I/usr/include/openssl
-      LDFLAGS: -L/usr/lib
+    # variables:
+    #   CFLAGS: -I/usr/include/openssl
+    #   LDFLAGS: -L/usr/lib
     python:
-      version: '3.10.4'
-      # version: '3.9.12'
+      # version: '3.10.4'
+      version: '3.9.12'
       # Whether to setup a virtual environment in the repository root directory.
       # Defaults to true if omitted.
       virtualenv: true
