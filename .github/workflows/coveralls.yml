@@ -18,10 +18,10 @@ jobs:
     #     parallel: true
     #     flag-name: Unit Test
     - name: Run tests and collect coverage
-        run: pytest --cov --cov-report=xml
+      run: pytest --cov --cov-report=xml
     - name: Coverage
-        run: coverage run --source=uom setup.py test
+      run: coverage run --source=uom setup.py test
     - name: Coverage post
-        run: |
-          coverage report -m
-          coveralls
+      run: |
+        coverage report -m
+        coveralls
