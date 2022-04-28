@@ -39,7 +39,7 @@ jobs:
           command: pytest
       - run:
           name: Run tests and collect coverage
-          command: pytest --cov --cov-report
+          command: pytest --cov --cov-report=xml
       - codecov/upload
 
 # Invoke jobs via workflows
