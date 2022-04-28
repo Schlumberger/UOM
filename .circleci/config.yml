@@ -29,8 +29,8 @@ jobs:
     # Here we're making sure we use just use the system-wide pip. By default it uses the project root's requirements.txt.
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
-    environment:
-      COVERALLS_REPO_TOKEN: JMrWlp4AZqr735mFBcRyt9LaCgyUwBV3Z
+    # environment:
+    #   COVERALLS_REPO_TOKEN: JMrWlp4AZqr735mFBcRyt9LaCgyUwBV3Z
     steps:
       - checkout
       - python/install-packages:
@@ -46,14 +46,14 @@ jobs:
           command: pytest --cov --cov-report=xml
       - codecov/upload
       # - coveralls/upload
-      - run:
-          name: Coverage
-          command: coverage run --source=uom setup.py test
-      - run:
-          name: Coverage post
-          command: |
-            coverage report -m
-            coveralls
+      # - run:
+      #     name: Coverage
+      #     command: coverage run --source=uom setup.py test
+      # - run:
+      #     name: Coverage post
+      #     command: |
+      #       coverage report -m
+      #       coveralls
 
 
 # Invoke jobs via workflows

@@ -5,7 +5,7 @@ checks:
 build:
   environment:
     python:
-      version: '3.10'
+      version: '3.10.4'
 
       # Whether to setup a virtual environment in the repository root directory.
       # Defaults to true if omitted.
