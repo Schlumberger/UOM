@@ -42,7 +42,7 @@ pip install uom
 
 ## Usage
 
-Please find a few examples of possible utilization:
+Please find examples of possible utilization:
 
 Find conversion factors to be applied to convert from one unit to another
 
