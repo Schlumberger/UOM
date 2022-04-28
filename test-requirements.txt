@@ -1,5 +1,5 @@
 pandas
 pytest
 pytest-cov
-python-coveralls
+coveralls
 coverage
