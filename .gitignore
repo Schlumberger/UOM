@@ -7,6 +7,8 @@ build/*
 _dist/*
 dist/*
 
+*.egg-info
+
 uom/uom.xlsx
 
 build/lib/uom/uomdata.py
