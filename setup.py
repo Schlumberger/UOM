@@ -17,7 +17,7 @@ def readme():
 
 
 setup(name='uom',
-      version='0.5.2',
+      version='0.6.0',
       description='Unit of Measure conversion tool',
       long_description=readme(),
       long_description_content_type='text/markdown',
