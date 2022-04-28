@@ -3,7 +3,7 @@ checks:
     code_rating: true
     duplicate_code: true
 build:
-  environment:
+  # environment:
     # variables:
     #   CFLAGS: -I/usr/include/openssl
     #   LDFLAGS: -L/usr/lib
@@ -14,7 +14,10 @@ build:
       # Defaults to true if omitted.
       virtualenv: true
   nodes:
-    my-tests-with-coverage:
+    analysis:
+      project_setup:
+          override:
+            - command: pip install -r test-requirements.txt
       tests:
         override:
           - command: pytest
