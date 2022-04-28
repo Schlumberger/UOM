@@ -7,7 +7,9 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v1
     - name: Unit tests
-      run: make test
+      run: |
+        pip insatall -r test-requirements.txt
+        pytest
     - name: Coveralls
       uses: AndreMiras/coveralls-python-action@develop
       with:
