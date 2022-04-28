@@ -19,3 +19,9 @@ build:
               file: '.coverage'
               config_file: '.coveragerc'
               format: 'py-cc'
+          - py-scrutinizer-run
+          - command: pylint-run
+            use_website_config: true
+filter:
+    excluded_paths:
+        - '*/tests/*'
