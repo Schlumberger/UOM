@@ -8,7 +8,7 @@
 | Codacy | [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2c1140afacf439c8fec00194acdc7db)](https://www.codacy.com/gh/Schlumberger/UOM/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Schlumberger/UOM&amp;utm_campaign=Badge_Grade) |
 | Codecov | [![codecov](https://codecov.io/gh/Schlumberger/UOM/branch/master/graph/badge.svg?token=mUH2Yzsxmd)](https://codecov.io/gh/Schlumberger/UOM) |
 | Coveralls | [![Coverage Status](https://coveralls.io/repos/github/Schlumberger/UOM/badge.svg?branch=master)](https://coveralls.io/github/Schlumberger/UOM?branch=master) |
-| CodeQL | [![CodeQL](https://github.com/Schlumberger/UOM/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Schlumberger/UOM/actions/workflows/codeql-analysis.yml) |
+| CodeQL | [![CodeQL](https://github.com/Schlumberger/UOM/actions/workflows/codeql.yml/badge.svg)](https://github.com/Schlumberger/UOM/actions/workflows/codeql.yml) |
 | CircleCI | [![CircleCI](https://circleci.com/gh/Schlumberger/UOM/tree/master.svg?style=svg)](https://circleci.com/gh/Schlumberger/UOM/tree/master) |
 | TravisCI | [![Build Status](https://travis-ci.com/Schlumberger/UOM.svg?token=qgnSxUFcykzzPyjostSM&branch=master)](https://travis-ci.com/Schlumberger/UOM) |
 | PyPI | [![PyPI Latest Release](https://img.shields.io/pypi/v/uom.svg)](https://pypi.org/project/uom/) [![Package Status](https://img.shields.io/pypi/status/uom.svg)](https://pypi.org/project/uom/) [![Python](https://img.shields.io/pypi/pyversions/uom.svg?style=plastic)](https://badge.fury.io/py/uom) |
