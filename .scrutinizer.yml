@@ -3,10 +3,10 @@ checks:
     code_rating: true
     duplicate_code: true
 build:
-  variables:
-    CFLAGS: -I/usr/include/openssl
-    LDFLAGS: -L/usr/lib
   environment:
+    variables:
+      CFLAGS: -I/usr/include/openssl
+      LDFLAGS: -L/usr/lib
     python:
       version: '3.10.4'
       # version: '3.9.12'
