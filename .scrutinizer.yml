@@ -14,7 +14,7 @@ build:
             - command: pip install -r test-requirements.txt
       tests:
         override:
-          - command: pytest
+          - command: pytest --cov=./
             coverage:
               file: '.coverage'
               config_file: '.coveragerc'
