@@ -48,8 +48,8 @@ def base_unit(unit_or_alias, verbose=False):
         if underlying_def:
             if underlying_def not in DF_UOM.index:
                 if verbose:
-                    print(f'{unit_or_alias} => {n} [Case1: IsBase, UD = {underlying_def}, but '
-                          'not available]>')
+                    print(f'{unit_or_alias} => {unit} [Case1: IsBase, UD = {underlying_def}, '
+                          'but not available]>')
 
                 return unit
 
