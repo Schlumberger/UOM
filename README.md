@@ -59,7 +59,7 @@ scale, offset = conversion_factors(source='m', target='ft')
 Convert a value from one unit to another
 
 ```Python
-from uom import convert_value
+from uom import convert
 
 print(convert(value=10, source='m', target='ft'))
 ```
