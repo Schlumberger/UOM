@@ -1,3 +1,4 @@
 include README.md
+include LICENSE.md
 include uom/uom.csv
 include requirements.txt
