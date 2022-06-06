@@ -26,17 +26,16 @@ python3 setup.py bdist_wheel
 
 Python unit of measure (UOM) conversion tool
 
-The conversion factors and unit symbols are based on the Energistics UOM
-1.0
-(<https://www.energistics.org/energistics-unit-of-measure-standard/>)
-extended with a
-extra unit aliases and \"unitless\" particular unit that cannot be converted.
+Energistics UOM 1.0 (<https://www.energistics.org/energistics-unit-of-measure-standard/>)
+is the primary source of conversion factors and unit symbols.
+We extended it with additional unit aliases and a \"unitless\" unit that
+doesn't have any conversion.
 
-The units are case sensitives.
+The units are case-sensitive.
 
 ## Where to get it
 
-The source code is hosted on GitHub at: <https://github.com/Schlumberger/UOM>
+The source code is available on GitHub at: <https://github.com/Schlumberger/UOM>
 
 Binary installers for the latest released version are available at the Python
 Package Index (PyPI).
@@ -77,8 +76,8 @@ print(unit_alias('kft.lbf'))
 ```
 
 If you have suggestions for improvement or you found bugs,
-please don't hesitate to put them in the issue list.
-
+please don't hesitate to put them on the issue list.
 
 ## License
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSchlumberger%2FUOM.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FSchlumberger%2FUOM?ref=badge_large)
