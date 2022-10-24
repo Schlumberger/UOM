@@ -14,6 +14,7 @@
 | Fossa | [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSchlumberger%2FUOM.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FSchlumberger%2FUOM?ref=badge_shield) |
 | PyPI | [![PyPI Latest Release](https://img.shields.io/pypi/v/uom.svg)](https://pypi.org/project/uom/) [![Package Status](https://img.shields.io/pypi/status/uom.svg)](https://pypi.org/project/uom/) [![Python](https://img.shields.io/pypi/pyversions/uom.svg?style=plastic)](https://badge.fury.io/py/uom) |
 | PePy | [![Downloads](https://pepy.tech/badge/uom)](https://pepy.tech/project/uom) [![Downloads](https://pepy.tech/badge/uom/month)](https://pepy.tech/project/uom) [![Downloads](https://pepy.tech/badge/uom/week)](https://pepy.tech/project/uom) |
+| Code formatting | [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) |
 
 <!--
 ## Build package
