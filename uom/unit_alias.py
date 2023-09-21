@@ -166,6 +166,9 @@ UNIT_ALIAS_DICT = {
     "RPG": "rev/gal[US]",
     "0.01 m3/m3": "0.01 bbl/bbl",
     "0.001/(ohm.m)": "mS",
+    "MMSCFD": "1E6 ft3/d",
+    "MMscfd": "1E6 ft3/d",
+    "mmscfd": "1E6 ft3/d",
 }
 
 
