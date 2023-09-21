@@ -114,7 +114,7 @@ def conversion_factors(source, target, verbose=False):
     offset = source_a * target_c / source_c / target_b - target_a / target_b
 
     if verbose:
-        print(f"Scale: {scale}, offset: {offset}")
+        print(f"Scale: {scale:.15g}, offset: {offset:.15g}")
 
     return scale, offset
 
