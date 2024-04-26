@@ -6,10 +6,11 @@ from argparse import ArgumentParser
 
 from colorlog import DEBUG, INFO, ColoredFormatter, StreamHandler, debug, getLogger
 
-from uom import convert
+from uom import base_unit, convert
 
 
 def cmd_convert(arg=None):
+    """Convert value."""
     logger = getLogger()
 
     handler = StreamHandler()
@@ -38,7 +39,6 @@ def cmd_convert(arg=None):
     # debug("Debug 1")
     # info("Info 1")
 
-    """Convert value."""
     parser = ArgumentParser(prog="uom_convert_value")
 
     parser.add_argument("value", type=float, nargs="+", help="value to be converted")
