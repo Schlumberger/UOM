@@ -1,4 +1,5 @@
 pandas
+build
 pytest
 pytest-cov
 coveralls

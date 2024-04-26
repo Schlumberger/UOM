@@ -1,12 +1,43 @@
 """Command line option."""
+
 from __future__ import absolute_import
 
 from argparse import ArgumentParser
 
-from .uom import base_unit, convert
+from colorlog import DEBUG, INFO, ColoredFormatter, StreamHandler, debug, getLogger
+
+from uom import convert
 
 
 def cmd_convert(arg=None):
+    logger = getLogger()
+
+    handler = StreamHandler()
+    handler.setFormatter(
+        ColoredFormatter(
+            "%(log_color)s%(asctime)s [%(levelname)s]: %(message)s",
+            datefmt=None,
+            reset=True,
+            log_colors={
+                "DEBUG": "green",
+                "INFO": "cyan",
+                "WARNING": "yellow",
+                "ERROR": "red",
+                "CRITICAL": "red,bg_white",
+            },
+            secondary_log_colors={},
+            style="%",
+        )
+    )
+
+    logger.propagate = False
+    logger.handlers.clear()
+    logger.addHandler(handler)
+    logger.setLevel(INFO)
+
+    # debug("Debug 1")
+    # info("Info 1")
+
     """Convert value."""
     parser = ArgumentParser(prog="uom_convert_value")
 
@@ -23,15 +54,20 @@ def cmd_convert(arg=None):
     else:
         args = parser.parse_args()
 
-    print(args)
+    if args.verbose:
+        logger.setLevel(DEBUG)
+
+        # debug("Debug 2")
+        # info("Info 2")
+
+        debug(args)
 
     if len(args.value) == 1:
-        out = convert(args.value[0], args.source, args.target, args.verbose)
+        out = convert(args.value[0], args.source, args.target)
     else:
-        out = convert(args.value, args.source, args.target, args.verbose)
+        out = convert(args.value, args.source, args.target)
 
-    if args.verbose:
-        print(f"Output: {out}")
+    debug(f"Output: {out}")
 
     return out
 
@@ -49,11 +85,10 @@ def cmd_base_unit(arg=None):
     else:
         args = parser.parse_args()
 
-    print(args)
+    debug(args)
 
-    out = base_unit(args.unit, args.verbose)
+    out = base_unit(args.unit)
 
-    if args.verbose:
-        print(f"Output: {out}")
+    debug(f"Output: {out}")
 
     return out

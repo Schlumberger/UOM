@@ -1,4 +1,5 @@
 """Test functions."""
+
 from __future__ import absolute_import
 
 from unittest import TestCase, main
@@ -17,7 +18,6 @@ from ..uom import (
 
 
 class UOMTestCase(TestCase):
-
     """Test class."""
 
     def test_conversion_of_value(self):
@@ -47,13 +47,6 @@ class UOMTestCase(TestCase):
         for k in sorted(tests):
             i = tests[k]
             out = convert(i[0], i[1], i[2])
-
-            self.assertEqual(out, i[3])
-
-        # verbose tests
-        for k in sorted(tests):
-            i = tests[k]
-            out = convert(i[0], i[1], i[2], True)
 
             self.assertEqual(out, i[3])
 
@@ -143,9 +136,6 @@ class UOMTestCase(TestCase):
         base = base_unit("jhdfkjshdfkjs")
         self.assertIsNone(base)
 
-        base = base_unit("jhdfkjshdfkjs", True)
-        self.assertIsNone(base)
-
     def test_cmd_base_unit(self):
         """Test base_unit function with bad parameter."""
         base = cmd_base_unit("jhdfkjshdfkjs")
@@ -158,7 +148,7 @@ class UOMTestCase(TestCase):
 
     def test_bad_convert(self):
         """Test convert function with bad parameter."""
-        result = convert(10, "jhdfkjshdfkjs", "", True)
+        result = convert(10, "jhdfkjshdfkjs", "")
         self.assertIsNone(result)
 
         result = convert(10, "", "jhdfkjshdfkjs")
@@ -185,35 +175,28 @@ class UOMTestCase(TestCase):
         result = convert(10, "m", "degC")
         self.assertIsNone(result)
 
-        result = convert(10, "m", "degC", True)
-        self.assertIsNone(result)
-
     def test_bad_conversion_factors(self):
         """Test conversion_factors function with bad parameter."""
-        scale, offset = conversion_factors("jhdfkjshdfkjs", "", True)
-        self.assertIsNone(scale)
-        self.assertIsNone(offset)
-
-        scale, offset = conversion_factors("", "jhdfkjshdfkjs")
+        scale, offset = conversion_factors("jhdfkjshdfkjs", "")
         self.assertIsNone(scale)
         self.assertIsNone(offset)
 
     def test_base_unit_recursive(self):
         """Test base_unit recursive."""
-        base = base_unit("J.m/m2", True)
+        base = base_unit("J.m/m2")
         self.assertEqual(base, "N")
 
-        scale, offset = conversion_factors("Hz", "1/s", True)
+        scale, offset = conversion_factors("Hz", "1/s")
         self.assertEqual(scale, 1)
         self.assertEqual(offset, 0)
 
-        scale, offset = conversion_factors("m3/m3", "%", True)
+        scale, offset = conversion_factors("m3/m3", "%")
         self.assertEqual(scale, 100)
         self.assertEqual(offset, 0)
 
     def test_bad_base_conv_factors(self):
         """Test base_conversion_factors function with bad parameter."""
-        aaa, bbb, ccc = base_conversion_factors("jhdfkjshdfkjs", True)
+        aaa, bbb, ccc = base_conversion_factors("jhdfkjshdfkjs")
         self.assertIsNone(aaa)
         self.assertIsNone(bbb)
         self.assertIsNone(ccc)
