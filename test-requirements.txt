@@ -1,4 +1,5 @@
 pandas
+colorlog
 build
 pytest
 pytest-cov
