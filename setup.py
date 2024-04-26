@@ -1,4 +1,5 @@
 """Python Package setup."""
+
 from __future__ import absolute_import
 
 from setuptools import setup
@@ -55,7 +56,11 @@ setup(
             "uom_base_unit=uom.cmd_line:cmd_base_unit",
         ],
     },
-    tests_require=["setuptools"},
+    tests_require=[
+        "setuptools",
+        "pytest",  # Example test dependency
+        "coverage",
+    ],
     include_package_data=True,
     zip_safe=False,
 )
