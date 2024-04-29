@@ -37,7 +37,7 @@ UNIT_ALIAS_DICT = {
     "KFT.LBF": "1000 lbf.ft",
     "Kft.lbs": "1000 lbf.ft",
     "Klbf": "1000 lbf.ft",
-    "ft.lbf":"lbf.ft",
+    "ft.lbf": "lbf.ft",
     "M": "m",
     "M3M2": "m",
     "METER": "m",
