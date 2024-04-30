@@ -126,7 +126,6 @@ UNIT_ALIAS_DICT = {
     "PSIA": "psi",
     "psia": "psi",
     "KPSI": "kpsi",
-    "ft.lbf": "lbf.ft",
     "in.lbf": "lbf.in",
     "FLBF": "lbf.in",
     "ft-lbs": "lbf.in",
